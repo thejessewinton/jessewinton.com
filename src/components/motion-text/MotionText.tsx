@@ -7,6 +7,7 @@ type MotionTextProps = {
   as?: Tags;
   className?: string;
   stagger?: number;
+  delay?: number;
 };
 
 export const MotionText = ({
@@ -14,7 +15,17 @@ export const MotionText = ({
   as: Tag = 'p',
   className,
   stagger = 0.025,
+  delay = 0,
 }: MotionTextProps) => {
+  const container = {
+    visible: {
+      transition: {
+        staggerChildren: stagger,
+        delayChildren: delay,
+      },
+    },
+  };
+
   const item = {
     hidden: {
       y: '200%',
@@ -36,14 +47,6 @@ export const MotionText = ({
   words.map((word: string[]) => {
     return word.push('\u00A0');
   });
-
-  const container = {
-    visible: {
-      transition: {
-        staggerChildren: stagger,
-      },
-    },
-  };
 
   return (
     <motion.div initial="hidden" animate="visible" variants={container}>

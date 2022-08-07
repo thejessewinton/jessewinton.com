@@ -10,20 +10,24 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.6",
     "@prisma/client": "^4.1.1",
+    "@radix-ui/react-icons": "^1.1.1",
+    "@splidejs/react-splide": "^0.7.8",
     "@trpc/client": "^9.26.2",
     "@trpc/next": "^9.26.2",
     "@trpc/react": "^9.26.2",
     "@trpc/server": "^9.26.2",
+    "classnames": "^2.3.1",
     "framer-motion": "^7.0.0",
     "next": "12.2.3",
     "next-seo": "^5.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
     "react-query": "3.39.2",
     "superjson": "^1.9.1",
-    "zod": "^3.17.3"
+    "zod": "^3.17.3",
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

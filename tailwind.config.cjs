@@ -19,6 +19,7 @@ module.exports = {
           orange: '#904D27',
           green: '#415737',
         },
+        spotify: '#1db954',
       },
       fontFamily: {
         sans: [
@@ -37,6 +38,10 @@ module.exports = {
         h5: '1.75rem',
         h6: '1.25rem',
         base: ['14px', '1.5'],
+      },
+      animation: {
+        fadeIn: 'fadeIn 200ms ease-in-out forwards',
+        fadeOut: 'fadeOut 200ms ease-in-out forwards',
       },
     },
   },

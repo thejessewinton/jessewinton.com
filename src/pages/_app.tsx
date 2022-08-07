@@ -5,18 +5,19 @@ import { DefaultSeo } from 'next-seo';
 import { withTRPC } from '@trpc/next';
 
 import { config } from '../../site.config';
-import type { AppRouter } from '../server/router';
 
-import '../styles/globals.css';
+import 'styles/globals.css';
 
+import { DefaultLayout } from 'layouts/DefaultLayout';
+import type { AppRouter } from 'server/router';
 import superjson from 'superjson';
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+const App: AppType = ({ Component, pageProps }) => {
   return (
-    <>
+    <DefaultLayout>
       <DefaultSeo {...config} />
       <Component {...pageProps} />
-    </>
+    </DefaultLayout>
   );
 };
 
@@ -31,24 +32,13 @@ const getBaseUrl = () => {
 };
 
 export default withTRPC<AppRouter>({
-  config({ ctx }) {
-    /**
-     * If you want to use SSR, you need to use the server's full URL
-     * @link https://trpc.io/docs/ssr
-     */
+  config() {
     const url = `${getBaseUrl()}/api/trpc`;
 
     return {
       url,
       transformer: superjson,
-      /**
-       * @link https://react-query.tanstack.com/reference/QueryClient
-       */
-      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
     };
   },
-  /**
-   * @link https://trpc.io/docs/ssr
-   */
   ssr: false,
-})(MyApp);
+})(App);
