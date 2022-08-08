@@ -4,7 +4,6 @@ import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 
 import Image1 from '/public/images/Image01.webp';
 import { Link } from 'components/shared/link/Link';
-import { MotionImage } from 'components/shared/motion-image/MotionImage';
 
 type Role = {
   name: string;
@@ -35,12 +34,6 @@ const roles = [
     year: '2019',
   },
 ];
-
-const UpcomingBadge = () => (
-  <div className="max-w-min rounded-3xl bg-white py-2 px-3 text-xs font-bold text-gray-100">
-    Upcoming
-  </div>
-);
 
 const Roles = ({ roles }: { roles: Role[] }) => {
   return (
