@@ -1,28 +1,15 @@
 import type { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
-import { Carousel } from 'components/carousel/Carousel';
-import { MotionText } from 'components/motion-text/MotionText';
+import { Bio } from 'components/sections/bio/Bio';
+import { CallToAction } from 'components/sections/call-to-action/CallToAction';
 
 const Index: NextPage = () => {
   return (
     <>
       <NextSeo title="Actor x Writer" />
-
-      <div className="flex w-full items-center justify-between">
-        <MotionText as="h1" className="uppercase" delay={0.025}>
-          Actor
-        </MotionText>
-
-        <MotionText as="h1" className="uppercase" delay={0.05}>
-          Writer
-        </MotionText>
-
-        <MotionText as="h1" className="uppercase" delay={0.075}>
-          Musician
-        </MotionText>
-      </div>
-      <Carousel />
+      <Bio />
+      <CallToAction />
     </>
   );
 };

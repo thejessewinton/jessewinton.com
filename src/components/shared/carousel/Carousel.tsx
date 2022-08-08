@@ -42,7 +42,7 @@ export const Carousel = () => {
           <Image
             src={image.src}
             alt={image.alt}
-            width="400"
+            width="400¡"
             layout="fill"
             placeholder="blur"
           />

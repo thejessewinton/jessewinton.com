@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-100 font-sans text-white;
+  @apply relative m-0 w-screen bg-accent-beige text-base font-light leading-6 text-gray-100 dark:bg-gray-100 dark:text-white;
 }
 
 a {
-  @apply text-white no-underline transition-colors;
+  @apply no-underline transition-colors;
 }
 
 h1 {
@@ -32,4 +32,8 @@ h5 {
 
 h6 {
   @apply text-h6;
+}
+
+.accent {
+  @apply text-accent-orange;
 }

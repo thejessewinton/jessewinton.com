@@ -18,4 +18,9 @@ export default defineNextConfig({
   images: {
     domains: ['i.scdn.co'],
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 });

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { Footer } from 'components/footer/Footer';
+import { Footer } from 'components/layout/footer/Footer';
+import { Header } from 'components/layout/header/Header';
 
 type DefaultLayoutProps = {
   children: ReactNode;
@@ -8,11 +9,10 @@ type DefaultLayoutProps = {
 
 export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
-    <>
-      <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-        <div className="flex w-full flex-grow items-center">{children}</div>
-        <Footer />
-      </main>
-    </>
+    <div className="px-12">
+      <Header />
+      <main className="container">{children}</main>
+      <Footer />
+    </div>
   );
 };

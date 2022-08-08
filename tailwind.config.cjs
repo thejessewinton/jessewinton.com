@@ -4,13 +4,14 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '1.25rem',
+      margin: '1.25rem',
     },
     extend: {
       colors: {
         gray: {
           100: '#111111',
           200: '#222222',
+          300: '#333333',
         },
         light: {
           100: '#f6f4ee',
@@ -18,6 +19,7 @@ module.exports = {
         accent: {
           orange: '#904D27',
           green: '#415737',
+          beige: '#F6F4EE',
         },
         spotify: '#1db954',
       },
@@ -38,6 +40,20 @@ module.exports = {
         h5: '1.75rem',
         h6: '1.25rem',
         base: ['14px', '1.5'],
+      },
+      minWidth: {
+        '2/3': '66.66667%',
+        '1/2': '50%',
+        '1/3': '33.33333%',
+        '1/4': '25%',
+        '2/5': '20%',
+      },
+      maxWidth: {
+        '2/3': '66.66667%',
+        '1/2': '50%',
+        '1/3': '33.33333%',
+        '1/4': '25%',
+        '2/5': '20%',
       },
       animation: {
         fadeIn: 'fadeIn 200ms ease-in-out forwards',

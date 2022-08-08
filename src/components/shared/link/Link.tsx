@@ -10,6 +10,7 @@ interface LinkProps {
   as?: string;
   target?: HTMLAttributeAnchorTarget;
   className?: string;
+  icon?: ReactNode;
   activeClassName?: string;
   [key: string]: ReactNode;
 }
@@ -18,6 +19,7 @@ export const Link = ({
   children,
   to,
   className,
+  icon,
   activeClassName,
   as,
   target,
@@ -32,12 +34,18 @@ export const Link = ({
       <a
         className={classNames(
           className,
-          'transition-colors duration-200 hover:text-accent-orange'
+          'hover:text-accent-orange group flex items-center gap-2 transition-colors duration-200'
         )}
         target={isExternal ? '_blank' : target}
         {...props}
       >
         {children}
+
+        {icon && (
+          <span className="transition-transform duration-500 group-hover:-translate-y-1">
+            {icon}
+          </span>
+        )}
       </a>
     </NextLink>
   );
