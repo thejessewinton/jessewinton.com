@@ -61,7 +61,10 @@ const Roles = ({ roles }: { roles: Role[] }) => {
 
 export const Bio = () => {
   return (
-    <div className="flex flex-col justify-between gap-24 py-12 md:flex-row">
+    <div
+      className="flex flex-col justify-between gap-24 py-12 md:flex-row"
+      id="bio"
+    >
       <div className="flex flex-col gap-12">
         <div>
           I’m a New York based actor, writer, and musician. I love telling good
