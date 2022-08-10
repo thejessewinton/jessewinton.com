@@ -28,7 +28,11 @@ const Index = ({ document }: IndexPage) => {
         image={document.data.bio_image}
         url={document.data.resume.url}
       />
-      <CallToAction heading={document.data.heading} />
+      <CallToAction
+        heading={document.data.heading}
+        cta={document.data.call_to_action}
+        link={document.data.link}
+      />
     </>
   );
 };

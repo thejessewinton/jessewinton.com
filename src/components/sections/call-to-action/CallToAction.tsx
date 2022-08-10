@@ -1,18 +1,22 @@
-import { PrismicRichText } from '@prismicio/react';
+import { PrismicRichText, PrismicText } from '@prismicio/react';
+import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 
-export const CallToAction = ({ heading }: any) => {
+import { Link } from 'components/shared/link/Link';
+
+export const CallToAction = ({ heading, cta, link }: any) => {
   return (
     <div className="flex h-[400px] flex-col items-center justify-center gap-12 border-t border-gray-300 text-center">
-      <div className="flex items-center uppercase">
-        <PrismicRichText field={heading} />
-        {/* Want Me to&nbsp;
+      <div className="flex flex-col items-center gap-8 uppercase">
+        <PrismicRichText field={heading} />{' '}
         <Link
-          to="mailto:hi@jessewinton.com"
+          to={link.url}
           className="text-accent-orange"
-          icon={<ArrowTopRightIcon className="h-10 w-10 text-white" />}
+          icon={<ArrowTopRightIcon className="h-10 w-10" />}
         >
-          Join Your Cast
-        </Link> */}
+          <h2>
+            <PrismicText field={cta} />
+          </h2>
+        </Link>
       </div>
     </div>
   );

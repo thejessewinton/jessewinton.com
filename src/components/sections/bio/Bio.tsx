@@ -54,7 +54,7 @@ const Roles = ({ roles, url }: { roles: Role[]; url: string }) => {
 export const Bio = ({ roles, bio, image, url }: BioProps) => {
   return (
     <div
-      className="flex flex-col justify-between gap-24 py-12 md:flex-row"
+      className="flex flex-col justify-between gap-24 border-t border-gray-300 py-12 md:flex-row"
       id="bio"
     >
       <div className="flex flex-col gap-12">

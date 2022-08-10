@@ -2,13 +2,19 @@
   "_cts": {
     "index": {
       "gallery": {},
+      "roles": {},
       "heading": {
         "config": {
           "patternType": "HEADING",
           "blocks": 1
         }
       },
-      "roles": {}
+      "call_to_action": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   }
 }
