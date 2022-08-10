@@ -16,7 +16,7 @@ export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['i.scdn.co'],
+    domains: ['i.scdn.co', 'images.prismic.io'],
   },
   experimental: {
     images: {

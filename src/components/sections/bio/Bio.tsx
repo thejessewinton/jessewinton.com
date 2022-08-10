@@ -1,5 +1,7 @@
 import Image from 'next/future/image';
 
+import { PrismicRichText, PrismicRichTextProps } from '@prismicio/react';
+import { RTNode } from '@prismicio/types';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
 
 import Image1 from '/public/images/Image01.webp';
@@ -11,31 +13,21 @@ type Role = {
   year: string;
 };
 
-// TODO: Mock data
-const roles = [
-  {
-    name: 'Harold Hill',
-    show: 'The Music Man',
-    year: '2023',
-  },
-  {
-    name: 'Gaston',
-    show: 'Beauty and the Beast',
-    year: '2018',
-  },
-  {
-    name: 'Wadsworth',
-    show: 'Clue',
-    year: '2021',
-  },
-  {
-    name: 'Algernon Moncrieff',
-    show: 'The Importance of Being Earnest',
-    year: '2019',
-  },
-];
+type BioProps = {
+  image: {
+    url: string;
+    alt: string;
+    dimensions: {
+      width: number;
+      height: number;
+    };
+  };
+  url: string;
+  roles: Role[];
+  bio: [] | [RTNode, ...RTNode[]] | null | undefined;
+};
 
-const Roles = ({ roles }: { roles: Role[] }) => {
+const Roles = ({ roles, url }: { roles: Role[]; url: string }) => {
   return (
     <div className="flex w-full flex-grow flex-col gap-12">
       <div className="divide-y">
@@ -49,7 +41,7 @@ const Roles = ({ roles }: { roles: Role[] }) => {
       </div>
 
       <Link
-        to="/"
+        to={url}
         icon={<ArrowTopRightIcon />}
         className="mb-0 mt-auto lg:self-end"
       >
@@ -59,7 +51,7 @@ const Roles = ({ roles }: { roles: Role[] }) => {
   );
 };
 
-export const Bio = () => {
+export const Bio = ({ roles, bio, image, url }: BioProps) => {
   return (
     <div
       className="flex flex-col justify-between gap-24 py-12 md:flex-row"
@@ -67,33 +59,20 @@ export const Bio = () => {
     >
       <div className="flex flex-col gap-12">
         <div>
-          I’m a New York based actor, writer, and musician. I love telling good
-          stories that address the human condition, and my biggest inspirations
-          are Edward Albee and Stephen Sondheim. The being said, I can&apos;t
-          write lyrics. At all. So I stick with plays, and I&apos;m working on a
-          few. As a musician I’ve won over a dozen California & Western U.S.
-          Championships, and I jump into bluegrass with aplomb.
-          <br />
-          <br />
-          In my free time you can find me studying political theory and public
-          policy. You might also be able to catch me working out, although
-          you’ll have to be quick as I’m very fast.
+          <PrismicRichText field={bio} />
         </div>
-        <Roles roles={roles} />
+        <Roles roles={roles} url={url} />
       </div>
       <div className="lg:max-w-1/3">
-        <Image src={Image1} alt="Image" placeholder="blur" />
+        <Image
+          src={image.url}
+          alt={image.alt}
+          width={image.dimensions.width}
+          height={image.dimensions.height}
+          placeholder="blur"
+          blurDataURL={`${image.url}&blur=100`}
+        />
       </div>
     </div>
   );
 };
-
-// transform: rotate(-90deg);
-// transform-origin: 0 100%;
-// position: absolute;
-// line-height: 25px;
-// font-size: 14px;
-// height: 25px;
-// width: 100%;
-// left: 25px;
-// bottom: 0;

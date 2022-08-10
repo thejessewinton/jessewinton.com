@@ -1,11 +1,24 @@
 import Image from 'next/future/image';
 
+import { PrismicRichText, PrismicText } from '@prismicio/react';
+import { RTNode } from '@prismicio/types';
 import { ArrowBottomRightIcon } from '@radix-ui/react-icons';
 
-import Image1 from '/public/images/Image01.webp';
 import { Link } from 'components/shared/link/Link';
 
-export const Intro = () => {
+type IntroProps = {
+  image: {
+    url: string;
+    alt: string;
+    dimensions: {
+      width: number;
+      height: number;
+    };
+  };
+  blurb: [] | [RTNode, ...RTNode[]] | null | undefined;
+};
+
+export const Intro = ({ image, blurb }: IntroProps) => {
   return (
     <div className="my-12 flex gap-6">
       <div className="flex flex-col">
@@ -22,15 +35,22 @@ export const Intro = () => {
       </div>
 
       <div className="lg:max-w-1/2">
-        <Image src={Image1} alt="Image" placeholder="blur" />
+        <Image
+          src={image.url}
+          alt={image.alt}
+          width={image.dimensions.width}
+          height={image.dimensions.height}
+          placeholder="blur"
+          blurDataURL={`${image.url}&blur=100`}
+        />
       </div>
 
       <div className="flex flex-col">
         <h2 className="pt-10 text-[8vw] font-medium uppercase">Winton</h2>
 
-        <p className="mt-40 border-b border-gray-300 pb-10">
-          Actor, playwright, and award-winning musician from New York, NY.
-        </p>
+        <div className="mt-40 border-b border-gray-300 pb-10">
+          <PrismicRichText field={blurb} />
+        </div>
       </div>
     </div>
   );

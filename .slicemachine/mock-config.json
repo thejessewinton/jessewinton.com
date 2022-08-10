@@ -1,0 +1,14 @@
+{
+  "_cts": {
+    "index": {
+      "gallery": {},
+      "heading": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "roles": {}
+    }
+  }
+}

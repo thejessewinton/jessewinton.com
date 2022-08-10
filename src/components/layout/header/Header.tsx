@@ -32,7 +32,7 @@ export const Header = () => {
 
         <div className="flex uppercase">
           <span className="text-accent-orange">Up Next – &nbsp;</span>
-          <Link to="/" icon={<ArrowTopRightIcon />}>
+          <Link to="#" icon={<ArrowTopRightIcon />}>
             The Music Man
           </Link>
         </div>
