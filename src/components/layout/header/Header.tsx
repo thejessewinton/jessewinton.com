@@ -11,9 +11,9 @@ const NowPlaying = () => {
     <div className="group flex gap-2">
       <RiSpotifyFill className="h-6 w-6 text-spotify" />
       {spotify && spotify?.track?.isPlaying ? (
-        <Link to={spotify.track.songUrl} className="flex flex-col">
-          <span className="text-sm">{spotify.track?.title}</span>
-          <span className="-mt-2 self-start text-xs text-accent-orange">
+        <Link to={spotify.track.songUrl} className="!block">
+          <span className="block text-sm">{spotify.track?.title}</span>
+          <span className="block self-start text-xs text-accent-orange">
             {spotify.track?.artist}
           </span>
         </Link>
