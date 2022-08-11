@@ -46,7 +46,9 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,strong,em,hyperlink",
-          "labels": ["accent"]
+          "labels": [
+            "accent"
+          ]
         }
       }
     },
@@ -77,7 +79,9 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,strong,em,hyperlink",
-          "labels": ["accent"]
+          "labels": [
+            "accent"
+          ]
         }
       },
       "roles": {
@@ -154,8 +158,10 @@
           "label": "Heading",
           "placeholder": "",
           "allowTargetBlank": false,
-          "single": "heading2,hyperlink",
-          "labels": ["accent"]
+          "single": "hyperlink,heading3",
+          "labels": [
+            "accent"
+          ]
         }
       },
       "call_to_action": {
@@ -164,8 +170,10 @@
           "label": "Call to Action",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "heading2,hyperlink",
-          "labels": ["accent"]
+          "single": "hyperlink,heading3",
+          "labels": [
+            "accent"
+          ]
         }
       },
       "link": {

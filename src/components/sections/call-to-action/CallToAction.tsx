@@ -7,15 +7,15 @@ export const CallToAction = ({ heading, cta, link }: any) => {
   return (
     <div className="flex h-[400px] flex-col items-center justify-center gap-12 border-t border-gray-300 text-center">
       <div className="flex flex-col items-center gap-8 uppercase leading-tight">
-        <PrismicRichText field={heading} />{' '}
+        <PrismicText field={heading} />{' '}
         <Link
           to={link.url}
           className="text-accent-orange"
           icon={<ArrowTopRightIcon className="h-10 w-10" />}
         >
-          <h2>
+          <h3>
             <PrismicText field={cta} />
-          </h2>
+          </h3>
         </Link>
       </div>
     </div>
