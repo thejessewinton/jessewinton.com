@@ -6,7 +6,7 @@ import { Link } from 'components/shared/link/Link';
 export const CallToAction = ({ heading, cta, link }: any) => {
   return (
     <div className="flex h-[400px] flex-col items-center justify-center gap-12 border-t border-gray-300 text-center">
-      <div className="flex flex-col items-center gap-8 uppercase">
+      <div className="flex flex-col items-center gap-8 uppercase leading-tight">
         <PrismicRichText field={heading} />{' '}
         <Link
           to={link.url}

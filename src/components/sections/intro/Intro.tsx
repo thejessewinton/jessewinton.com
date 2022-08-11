@@ -25,9 +25,9 @@ export const Intro = ({ image, blurb, upNext, link }: IntroProps) => {
   return (
     <>
       <Header upNext={upNext} link={link} />
-      <div className="my-12 flex gap-6">
+      <div className="my-12 gap-6 lg:flex">
         <div className="flex flex-col">
-          <h2 className="pt-10 text-[8vw] uppercase text-accent-orange">
+          <h2 className="pb-10 text-[20vw] uppercase text-accent-orange lg:pt-10 lg:text-[8vw]">
             Jesse
           </h2>
 
@@ -35,7 +35,7 @@ export const Intro = ({ image, blurb, upNext, link }: IntroProps) => {
             to="#bio"
             iconHover="down"
             icon={<ArrowBottomRightIcon />}
-            className="mt-auto mb-0 self-end"
+            className="self-end lg:mt-auto lg:mb-0"
           >
             Bio
           </Link>
@@ -53,9 +53,11 @@ export const Intro = ({ image, blurb, upNext, link }: IntroProps) => {
         </div>
 
         <div className="flex flex-col">
-          <h2 className="pt-10 text-[8vw] font-medium uppercase">Winton</h2>
+          <h2 className="pt-10 text-[20vw] font-medium uppercase lg:text-[8vw]">
+            Winton
+          </h2>
 
-          <div className="mt-40 border-b border-gray-300 pb-10">
+          <div className="mt-40 border-gray-300 pb-10 lg:border-b">
             <PrismicRichText field={blurb} />
           </div>
         </div>
