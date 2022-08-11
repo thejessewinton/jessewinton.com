@@ -19,6 +19,8 @@ const Index = ({ document }: IndexPage) => {
     <>
       <NextSeo title={document.data.meta_title} />
       <Intro
+        upNext={document.data.up_next}
+        link={document.data.ticket_link.url}
         image={document.data.intro_image}
         blurb={document.data.intro_blurb}
       />

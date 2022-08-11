@@ -30,7 +30,6 @@ const App: AppType = ({ Component, pageProps }) => {
       <PrismicPreview repositoryName={repositoryName}>
         <div className="px-12">
           <DefaultSeo {...config} />
-          <Header />
           <main className="container">
             <Component {...pageProps} />
           </main>

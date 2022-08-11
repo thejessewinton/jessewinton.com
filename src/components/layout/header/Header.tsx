@@ -24,7 +24,7 @@ const NowPlaying = () => {
   );
 };
 
-export const Header = () => {
+export const Header = ({ upNext, link }: { upNext: string; link: string }) => {
   return (
     <header className="container flex h-32 w-full items-center border-b border-b-gray-300">
       <div className="flex w-full items-center justify-between">
@@ -32,8 +32,8 @@ export const Header = () => {
 
         <div className="flex uppercase">
           <span className="text-accent-orange">Up Next – &nbsp;</span>
-          <Link to="#" icon={<ArrowTopRightIcon />}>
-            The Music Man
+          <Link to={link || '#'} icon={<ArrowTopRightIcon />}>
+            {upNext}
           </Link>
         </div>
       </div>
