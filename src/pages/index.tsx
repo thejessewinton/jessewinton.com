@@ -15,6 +15,7 @@ type IndexPage = NextPage & {
 };
 
 const Index = ({ document }: IndexPage) => {
+  console.log(document.data.gallery);
   return (
     <>
       <NextSeo title={document.data.meta_title} />

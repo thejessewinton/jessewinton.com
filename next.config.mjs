@@ -23,4 +23,8 @@ export default defineNextConfig({
       allowFutureImage: true,
     },
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 });
