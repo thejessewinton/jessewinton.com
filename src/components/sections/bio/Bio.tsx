@@ -71,6 +71,7 @@ export const Bio = ({ roles, bio, image, url }: BioProps) => {
           height={image.dimensions.height}
           placeholder="blur"
           blurDataURL={`${image.url}&blur=100`}
+          loading="lazy"
         />
       </div>
     </div>

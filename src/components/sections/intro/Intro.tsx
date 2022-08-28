@@ -49,6 +49,7 @@ export const Intro = ({ image, blurb, upNext, link }: IntroProps) => {
             height={image.dimensions.height}
             placeholder="blur"
             blurDataURL={`${image.url}&blur=100`}
+            loading="eager"
           />
         </div>
 
