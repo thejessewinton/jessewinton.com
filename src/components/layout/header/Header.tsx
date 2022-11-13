@@ -1,19 +1,25 @@
 import { Link } from '../../shared/link/Link';
 
 import { trpc } from 'client-data/utils/trpc';
+import { Spinner } from 'components/shared/spinner/Spinner';
 import { RiSpotifyFill } from 'react-icons/ri';
 
 const NowPlaying = () => {
-  const { data: spotify } = trpc.useQuery(['spotify.get-current-track']);
+  const spotify = trpc.spotify.getNowPlaying.useQuery();
   return (
     <div className="group flex items-center gap-2">
       <RiSpotifyFill className="h-6 w-6 text-spotify" />
-      {spotify && spotify?.track?.isPlaying ? (
-        <Link to={spotify.track.songUrl} className="!block">
+      {spotify.isLoading ? (
+        <div className="flex flex-col gap-2">
+          <span className="block h-2 w-16 self-start bg-accent-orange" />
+          <span className="block h-4 w-32 bg-white" />
+        </div>
+      ) : spotify.data?.track && spotify.data.track.isPlaying ? (
+        <Link to={spotify.data.track.songUrl} className="!block">
           <span className="block self-start text-xs text-accent-orange">
-            {spotify.track?.artist}
+            {spotify.data.track.artist}
           </span>
-          <span className="block text-sm">{spotify.track?.title}</span>
+          <span className="block text-sm">{spotify.data.track.title}</span>
         </Link>
       ) : (
         <span className="text-sm">Not Playing</span>

@@ -1,12 +1,11 @@
 import Image from 'next/image';
 
-import Image1 from '/public/images/Image01.webp';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-type MotionImageProps = { className?: string };
+type MotionImageProps = { className?: string; src: string };
 
-export const MotionImage = ({ className }: MotionImageProps) => {
+export const MotionImage = ({ className, src, ...rest }: MotionImageProps) => {
   return (
     <div className={classNames('relative h-full overflow-hidden', className)}>
       <div className="relative h-full overflow-hidden">
@@ -15,10 +14,16 @@ export const MotionImage = ({ className }: MotionImageProps) => {
           animate={{
             height: 0,
           }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
         />
 
-        <Image src={Image1} alt="Image" placeholder="blur" />
+        {/* <motion.div
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1 }}
+        > */}
+        <Image src={src} alt="Image" placeholder="blur" {...rest} />
+        {/* </motion.div> */}
       </div>
 
       <p className="w-full">Skyler Greene 2022</p>

@@ -18,11 +18,6 @@ export default defineNextConfig({
   images: {
     domains: ['i.scdn.co', 'images.prismic.io'],
   },
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',

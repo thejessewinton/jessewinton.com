@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { RTNode } from '@prismicio/types';

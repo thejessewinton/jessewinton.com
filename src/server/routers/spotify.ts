@@ -1,18 +1,10 @@
-import { createRouter } from '../context';
-
 import { getNowPlaying } from 'client-data/lib/spotify';
+import { publicProcedure, router } from 'server/trpc';
 
-export const spotifyRouter = createRouter().query('get-current-track', {
-  resolve: async () => {
+export const spotifyRouter = router({
+  getNowPlaying: publicProcedure.query(async () => {
     try {
       const response = await getNowPlaying();
-
-      if (response.status === 204 || response.status > 400) {
-        return {
-          isPlaying: false,
-          success: false,
-        };
-      }
 
       return {
         track: {
@@ -29,9 +21,8 @@ export const spotifyRouter = createRouter().query('get-current-track', {
       };
     } catch (error) {
       return {
-        error,
         success: false,
       };
     }
-  },
+  }),
 });
