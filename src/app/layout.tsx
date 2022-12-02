@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <body className={inter.className}>
-      <Header upNext="TBA" link="#" />
+      <Header />
       <main className="container">{children}</main>
       <Footer />
     </body>
