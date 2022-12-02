@@ -15,6 +15,7 @@ module.exports = {
         },
         light: {
           100: '#f6f4ee',
+          200: '#f2f0ea',
         },
         accent: {
           orange: '#904D27',

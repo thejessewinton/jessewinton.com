@@ -34,8 +34,6 @@ export const Link = ({
   return (
     <NextLink
       href={to}
-      as={as}
-      passHref={isExternal}
       className={classNames(
         className,
         'group flex items-center gap-2 transition-colors duration-200 hover:text-accent-orange'

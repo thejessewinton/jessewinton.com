@@ -5,7 +5,7 @@ import { Copyright } from '../copyright/Copyright';
 
 export const Footer = () => {
   return (
-    <footer className="flex w-full items-center bg-neutral-900 py-4">
+    <footer className="flex w-full items-center bg-light-200 py-4 dark:bg-neutral-900">
       <div className="container flex w-full items-center justify-between">
         <nav className="flex items-center justify-between gap-6 text-sm">
           <Link
