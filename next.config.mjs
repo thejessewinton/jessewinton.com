@@ -1,4 +1,5 @@
 import { env } from './src/env/server.mjs';
+import { withContentlayer } from 'next-contentlayer';
 
 /**
  * Don't be scared of the generics here.
@@ -9,7 +10,7 @@ import { env } from './src/env/server.mjs';
  * @constraint {{import('next').NextConfig}}
  */
 function defineNextConfig(config) {
-  return config;
+  return withContentlayer(config);
 }
 
 export default defineNextConfig({
@@ -18,8 +19,7 @@ export default defineNextConfig({
   images: {
     domains: ['i.scdn.co', 'images.prismic.io'],
   },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
+  experimental: {
+    appDir: true,
   },
 });
