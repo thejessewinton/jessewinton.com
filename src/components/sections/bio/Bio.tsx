@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 import { PrismicRichText, PrismicRichTextProps } from '@prismicio/react';
 import { RTNode } from '@prismicio/types';
-import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 
-import Image1 from '/public/images/Image01.webp';
+import headshot from '/public/headshot-2021.webp';
 import { Link } from 'components/shared/link/Link';
 
 type Role = {
@@ -27,7 +27,30 @@ type BioProps = {
   bio: [] | [RTNode, ...RTNode[]] | null | undefined;
 };
 
-const Roles = ({ roles, url }: { roles: Role[]; url: string }) => {
+const roles: Role[] = [
+  {
+    name: 'Gaston',
+    show: `Disney's Beautfy and the Beast`,
+    year: '2018',
+  },
+  {
+    name: 'Algernon Moncrieff',
+    show: 'The Importance of Being Earnest',
+    year: '2019',
+  },
+  {
+    name: 'Wadsworth',
+    show: 'Clue',
+    year: '2021',
+  },
+  {
+    name: 'Dr. Craven',
+    show: 'The Secret Garden',
+    year: '2021',
+  },
+];
+
+const Roles = () => {
   return (
     <div className="flex w-full flex-grow flex-col gap-12">
       <div className="divide-y">
@@ -41,9 +64,10 @@ const Roles = ({ roles, url }: { roles: Role[]; url: string }) => {
       </div>
 
       <Link
-        to={url}
-        icon={<ArrowTopRightIcon />}
+        to="/jesse-winton-resume.pdf"
+        icon={<ArrowUpRightIcon className="h-4 w-4" />}
         className="mb-0 mt-auto lg:self-end"
+        target="blank"
       >
         Full Resumé
       </Link>
@@ -51,7 +75,7 @@ const Roles = ({ roles, url }: { roles: Role[]; url: string }) => {
   );
 };
 
-export const Bio = ({ roles, bio, image, url }: BioProps) => {
+export const Bio = () => {
   return (
     <div
       className="flex flex-col justify-between gap-24 border-t border-gray-300 py-12 md:flex-row"
@@ -59,18 +83,31 @@ export const Bio = ({ roles, bio, image, url }: BioProps) => {
     >
       <div className="flex flex-col gap-12">
         <div>
-          <PrismicRichText field={bio} />
+          <p>
+            Hi I&apos;m Jesse, and I&apos;m an actor, writer, and musician. I
+            love telling good stories, and I&apos;m working on a few plays (more
+            on that TBA). As a musician I&apos;ve won over a dozen California &
+            Western U.S. flat-picking championships.
+          </p>
+          <br />
+          <p>
+            In my free time you can find me studying political theory and public
+            policy. You might also be able to catch me working out, although
+            you&apos;ll have to be quick as I&apos;m very fast.
+          </p>
+          <br />
+          <p>
+            I listed a couple of my favorites roles here, but you should take a
+            look at my full resumé.
+          </p>
         </div>
-        <Roles roles={roles} url={url} />
+        <Roles />
       </div>
       <div className="lg:max-w-1/3">
         <Image
-          src={image.url}
-          alt={image.alt}
-          width={image.dimensions.width}
-          height={image.dimensions.height}
+          src={headshot}
+          alt="2021 Headshot"
           placeholder="blur"
-          blurDataURL={`${image.url}&blur=100`}
           loading="lazy"
         />
       </div>
