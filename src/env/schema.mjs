@@ -11,8 +11,6 @@ export const serverSchema = z.object({
   SPOTIFY_CLIENT_ID: z.string(),
   REVALIDATION_SECRET: z.string(),
   ROOT_URL: z.string().url(),
-  NOTION_TOKEN: z.string(),
-  NOTION_DATABASE_ID: z.string(),
   NODE_ENV: z.enum(['development', 'test', 'production']),
 });
 
