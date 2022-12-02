@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import { PrismicRichText, PrismicRichTextProps } from '@prismicio/react';
-import { RTNode } from '@prismicio/types';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 
 import headshot from '/public/headshot-2021.webp';
@@ -11,20 +9,6 @@ type Role = {
   name: string;
   show: string;
   year: string;
-};
-
-type BioProps = {
-  image: {
-    url: string;
-    alt: string;
-    dimensions: {
-      width: number;
-      height: number;
-    };
-  };
-  url: string;
-  roles: Role[];
-  bio: [] | [RTNode, ...RTNode[]] | null | undefined;
 };
 
 const roles: Role[] = [
