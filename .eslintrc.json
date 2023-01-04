@@ -1,78 +1,11 @@
 {
-  "extends": ["next/core-web-vitals"],
-  "plugins": ["react", "simple-import-sort", "import"],
-  "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "prefer-const": "error",
-    "prettier/prettier": "off",
-    "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
-    "arrow-spacing": "error",
-    "brace-style": ["error", "1tbs"],
-    "comma-spacing": ["warn", { "before": false, "after": true }],
-    "comma-dangle": ["error", "always-multiline"],
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
-    // indent: [
-    //   'warn',
-    //   2,
-    //   {
-    //     SwitchCase: 1,
-    //     ignoreComments: true,
-    //     ignoredNodes: ['ConditionalExpression'],
-    //   },
-    // ],
-    "no-console": "off",
-    "no-multiple-empty-lines": [
-      "error",
-      { "max": 1, "maxEOF": 1, "maxBOF": 1 }
-    ],
-    "no-multi-spaces": "warn",
-    "no-trailing-spaces": "error",
-    "no-whitespace-before-property": 2,
-    "object-curly-spacing": ["warn", "always"],
-    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
-    "semi": ["error", "always"],
-    "space-in-parens": ["warn", "never"],
-    "switch-colon-spacing": ["error", { "after": true, "before": false }]
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
   },
-  "overrides": [
-    {
-      "files": ["**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
-      "rules": {
-        "simple-import-sort/imports": [
-          "error",
-          {
-            "groups": [
-              // `react` first
-              ["^react$"],
-              // `next` second
-              ["^next"],
-              // Packages starting with `@`
-              ["^@"],
-              // Imports starting with `../`
-              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-              // Imports starting with `./`
-              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-              // Style imports
-              ["^.+\\.s?css$"]
-            ]
-          }
-        ]
-      }
-    }
-  ]
+  "plugins": ["@typescript-eslint"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "warn"
+  }
 }

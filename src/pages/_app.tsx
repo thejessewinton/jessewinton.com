@@ -1,42 +1,21 @@
 // src/pages/_app.tsx
-import type { AppType } from 'next/dist/shared/lib/utils';
-import Link from 'next/link';
-import { DefaultSeo } from 'next-seo';
+import { Manrope } from "@next/font/google";
 
-import { Inter } from '@next/font/google';
-import { PrismicPreview } from '@prismicio/next';
-import { PrismicProvider } from '@prismicio/react';
+import "styles/globals.css";
 
-import { linkResolver, repositoryName } from '../../prismic.config';
-import { config } from '../../site.config';
+import { Footer } from "components/layout/footer/Footer";
+import type { AppType } from "next/app";
+import { clsx } from "clsx";
+import { trpc } from "utils/trpc";
 
-import 'styles/globals.css';
-
-import { trpc } from 'client-data/utils/trpc';
-import { Footer } from 'components/layout/footer/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 const App: AppType = ({ Component, pageProps }) => {
   return (
-    <PrismicProvider
-      linkResolver={linkResolver}
-      internalLinkComponent={({ href, ...props }) => (
-        <Link href={href}>
-          <a {...props} />
-        </Link>
-      )}
-    >
-      <PrismicPreview repositoryName={repositoryName}>
-        <div className="px-4 lg:px-12">
-          <DefaultSeo {...config} />
-          <main className={`container ${inter.className}`}>
-            <Component {...pageProps} />
-          </main>
-          <Footer />
-        </div>
-      </PrismicPreview>
-    </PrismicProvider>
+    <main className={clsx("container flex flex-1 flex-col", manrope.className)}>
+      <Component {...pageProps} />
+      {/* <Footer /> */}
+    </main>
   );
 };
 
