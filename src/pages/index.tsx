@@ -3,7 +3,7 @@ import type { InferGetStaticPropsType, NextPage } from "next";
 
 import Head from "next/head";
 import Link from "next/link";
-import { getAllWriting } from "utils/api";
+import { getAllWriting, getDocBySlug, getIndexSectionBySlug } from "utils/api";
 
 type IndexPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -12,21 +12,21 @@ const WritingCard = ({
   synopsis,
   sample,
   year,
-  wip,
+  in_progress,
 }: {
   title: string;
   synopsis: string;
-  wip: boolean;
+  in_progress: boolean;
   year: string;
   sample?: string;
 }) => {
   return (
-    <div className="overflow-hidden rounded-md border border-neutral-300 p-6 dark:border-neutral-800 dark:bg-neutral-900">
+    <div className="overflow-hidden rounded-md p-6 dark:bg-neutral-900">
       <div className="flex justify-between">
         <h2 className="text-sm font-medium text-white">{title}</h2>
-        {wip ? (
+        {in_progress ? (
           <span className="flex items-center rounded-full bg-primary px-2 text-[10px] text-neutral-500">
-            WIP
+            In Progress
           </span>
         ) : (
           <span className="flex items-center rounded-full border bg-neutral-200 px-2 text-[10px] text-neutral-900">
@@ -64,7 +64,7 @@ const WritingCard = ({
   );
 };
 
-const Index: NextPage<IndexPageProps> = ({ writing }) => {
+const Index: NextPage<IndexPageProps> = ({ intro }) => {
   return (
     <>
       <Head>
@@ -73,19 +73,8 @@ const Index: NextPage<IndexPageProps> = ({ writing }) => {
       <Header />
       <div className="flex flex-col">
         <div className="py-6">
-          <h3 className="text-white lg:text-2xl">Writing</h3>
-        </div>
-        <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
-          {writing.map((writing) => (
-            <WritingCard
-              key={writing.slug}
-              title={writing.meta.title}
-              synopsis={writing.content}
-              sample={writing.meta.sample}
-              wip={writing.meta.wip}
-              year={writing.meta.year}
-            />
-          ))}
+          <h3 className="text-white lg:text-2xl">{intro.meta.heading}</h3>
+          <p>{intro.meta.blurb}</p>
         </div>
       </div>
     </>
@@ -95,11 +84,11 @@ const Index: NextPage<IndexPageProps> = ({ writing }) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const writing = getAllWriting();
+  const intro = getIndexSectionBySlug("intro");
 
   return {
     props: {
-      writing,
+      intro,
     },
   };
 };

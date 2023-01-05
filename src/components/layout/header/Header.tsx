@@ -39,7 +39,7 @@ export const Header = () => {
   return (
     <header className="flex h-32 w-full items-center">
       <div className="flex w-full items-center justify-between">
-        <NowPlaying />
+        {/* <NowPlaying /> */}
       </div>
     </header>
   );

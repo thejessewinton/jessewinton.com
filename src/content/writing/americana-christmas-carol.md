@@ -1,8 +1,7 @@
 ---
-title: The Two of I
+title: Americana Christmas Carol
 year: 2021
-order: 2
-sample: /samples/the-two-of-i.pdf
+order: 3
 in_progress: true
 ---
 
