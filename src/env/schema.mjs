@@ -1,5 +1,5 @@
 // @ts-check
-import { z } from 'zod';
+import { z } from "zod";
 
 /**
  * Specify your server-side environment variables schema here.
@@ -9,9 +9,8 @@ export const serverSchema = z.object({
   SPOTIFY_REFRESH_TOKEN: z.string(),
   SPOTIFY_CLIENT_SECRET: z.string(),
   SPOTIFY_CLIENT_ID: z.string(),
-  NOTION_TOKEN: z.string(),
-  NOTION_DATABASE_ID: z.string(),
-  NODE_ENV: z.enum(['development', 'test', 'production']),
+  SANITY_PROJECT_ID: z.string(),
+  NODE_ENV: z.enum(["development", "test", "production"]),
 });
 
 /**

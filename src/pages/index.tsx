@@ -1,9 +1,10 @@
 import { Header } from "components/layout/header/Header";
 import type { InferGetStaticPropsType, NextPage } from "next";
-
 import Head from "next/head";
 import Link from "next/link";
-import { getAllWriting, getDocBySlug, getIndexSectionBySlug } from "utils/api";
+import { postsSchema } from "content/schemas/posts";
+import { writingsSchema } from "content/schemas/writing";
+import { client } from "content/client";
 
 type IndexPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -11,13 +12,12 @@ const WritingCard = ({
   title,
   synopsis,
   sample,
-  year,
   in_progress,
 }: {
   title: string;
   synopsis: string;
   in_progress: boolean;
-  year: string;
+
   sample?: string;
 }) => {
   return (
@@ -30,7 +30,7 @@ const WritingCard = ({
           </span>
         ) : (
           <span className="flex items-center rounded-full border bg-neutral-200 px-2 text-[10px] text-neutral-900">
-            {year}
+            2022
           </span>
         )}
       </div>
@@ -64,7 +64,7 @@ const WritingCard = ({
   );
 };
 
-const Index: NextPage<IndexPageProps> = ({ intro }) => {
+const Index: NextPage<IndexPageProps> = ({ posts, writings }) => {
   return (
     <>
       <Head>
@@ -72,10 +72,16 @@ const Index: NextPage<IndexPageProps> = ({ intro }) => {
       </Head>
       <Header />
       <div className="flex flex-col">
-        <div className="py-6">
-          <h3 className="text-white lg:text-2xl">{intro.meta.heading}</h3>
-          <p>{intro.meta.blurb}</p>
-        </div>
+        <div className="py-6">{JSON.stringify(posts)}</div>
+        {writings.map((writing) => (
+          <WritingCard
+            key={writing.slug.current}
+            title={writing.title}
+            synopsis={writing.synopsis}
+            sample={writing.sample}
+            in_progress={true}
+          />
+        ))}
       </div>
     </>
   );
@@ -84,11 +90,15 @@ const Index: NextPage<IndexPageProps> = ({ intro }) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const intro = getIndexSectionBySlug("intro");
+  const posts = await client.fetch(`*[_type == "post"]{title}`);
+  const writings = await client.fetch(
+    `*[_type == "writing"]{title,synopsis,slug,sample}`
+  );
 
   return {
     props: {
-      intro,
+      posts: postsSchema.parse(posts),
+      writings: writingsSchema.parse(writings),
     },
   };
 };
