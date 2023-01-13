@@ -1,11 +1,14 @@
 import { Inter, Newsreader } from "@next/font/google";
 import { Footer } from "components/layout/footer/Footer";
+import type { ReactNode } from "react";
 
 import "styles/globals.css";
 
-const inter = Inter({ variable: "--font-inter" });
+const inter = Inter({ variable: "--font-inter", display: "optional" });
 const newsreader = Newsreader({
   variable: "--font-newsreader",
+  display: "optional",
+  style: "italic",
 });
 
 const links = [
@@ -25,15 +28,13 @@ const links = [
 
 export type Links = typeof links;
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
-      <body className="scroll-smooth font-sans leading-loose dark:bg-neutral-900 dark:text-neutral-200">
-        <main className="mx-auto flex min-h-screen max-w-3xl flex-1 flex-col px-8 pt-16">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="/favicon.ico" rel="shortcut icon" />
+      <body className="scroll-smooth leading-loose antialiased dark:bg-neutral-900 dark:text-neutral-200">
+        <main className="mx-auto flex min-h-screen max-w-3xl flex-1 flex-col px-8 pt-48">
           {children}
         </main>
         <Footer links={links} />

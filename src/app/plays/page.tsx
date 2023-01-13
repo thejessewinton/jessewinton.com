@@ -19,7 +19,7 @@ const PlayCard = ({
   return (
     <div className="pt-8">
       <div className="flex justify-between">
-        <h2 className="font-serif font-medium italic">{title}</h2>
+        <h2 className="!font-serif text-lg font-medium italic">{title}</h2>
       </div>
       <div className="mt-4 mb-6 leading-loose">{synopsis}</div>
       <div className="flex justify-between">

@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans antialiased;
-  }
   em {
     @apply font-serif font-normal;
   }

@@ -14,7 +14,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        serif: ["var(--font-newsreader)", ...defaultTheme.fontFamily.serif],
+        serif: ["var(--font-newsreader)", ...defaultTheme.fontFamily.sans],
       },
     },
   },

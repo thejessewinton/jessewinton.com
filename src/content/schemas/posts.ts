@@ -18,6 +18,10 @@ export const postSchema = z.object({
       style: z.string(),
     })
   ),
+  slug: z.object({
+    _type: z.literal("slug"),
+    current: z.string(),
+  }),
   date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 

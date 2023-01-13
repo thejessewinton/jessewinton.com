@@ -2,6 +2,7 @@ import { client } from "content/client";
 import { Hero } from "components/hero/Hero";
 import { postsSchema } from "content/schemas/posts";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 const Plays = async () => {
   const loader = await client.fetch(
@@ -29,22 +30,24 @@ const Plays = async () => {
   return (
     <>
       <Hero title="Writing" />
-      <div className="flex flex-col divide-y divide-neutral-700 border-t border-neutral-700">
+      <div className="group flex flex-col divide-y divide-neutral-700 border-t border-neutral-700">
         {Object.entries(sortedPostsByYear).map(([year, posts]) => {
           return (
             <div className="flex gap-32" key={year}>
-              <span className="pt-4 text-sm text-neutral-500">{year}</span>
+              <span className="pt-3 text-sm text-neutral-500">{year}</span>
               <div className="flex-1 divide-y divide-neutral-700">
                 {posts.map((post) => (
-                  <div
-                    key={post.title}
-                    className="flex flex-1 items-center justify-between py-3"
+                  <Link
+                    href={`/writing/${post.slug.current}`}
+                    key={post.slug.current}
                   >
-                    {post.title}
-                    <span className="text-sm text-neutral-500">
-                      {dayjs(post.date).format("MM/DD")}
-                    </span>
-                  </div>
+                    <div className="flex flex-1 items-center justify-between py-2 transition-opacity hover:!opacity-100 group-hover:opacity-40">
+                      {post.title}
+                      <span className="text-sm text-neutral-500">
+                        {dayjs(post.date).format("MM/DD")}
+                      </span>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
