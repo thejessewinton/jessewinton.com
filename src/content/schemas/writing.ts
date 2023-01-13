@@ -3,11 +3,12 @@ import { z } from "zod";
 export const writingSchema = z.object({
   title: z.string(),
   synopsis: z.string(),
-  slug: z.object({
-    _type: z.literal("slug"),
-    current: z.string(),
-  }),
-  sample: z.any(),
+  sample: z.string().nullable(),
+  date: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/)
+    .optional()
+    .nullable(),
 });
 
 export const writingsSchema = z.array(writingSchema);

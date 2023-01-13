@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next/font': ^13.0.3
+  '@portabletext/react': ^2.0.0
   '@tanstack/react-query': ^4.20.4
   '@trpc/client': ^10.7.0
   '@trpc/next': ^10.7.0
@@ -16,6 +17,7 @@ specifiers:
   autoprefixer: ^10.4.8
   classnames: ^2.3.1
   clsx: ^1.2.1
+  dayjs: ^1.11.7
   eslint: ^8.26.0
   eslint-config-next: 13.0.2
   gray-matter: ^4.0.3
@@ -35,6 +37,7 @@ specifiers:
 
 dependencies:
   '@next/font': 13.1.1
+  '@portabletext/react': 2.0.0_react@18.2.0
   '@tanstack/react-query': 4.20.4_biqbaboplfbrettd7655fr4n2y
   '@trpc/client': 10.7.0_@trpc+server@10.7.0
   '@trpc/next': 10.7.0_gmaturtqmtlrknaw65ek5pmv2i
@@ -45,6 +48,7 @@ dependencies:
   '@vercel/analytics': 0.1.6_react@18.2.0
   classnames: 2.3.2
   clsx: 1.2.1
+  dayjs: 1.11.7
   gray-matter: 4.0.3
   next: 13.1.1_biqbaboplfbrettd7655fr4n2y
   next-sanity: 3.1.9_next@13.1.1+react@18.2.0
@@ -266,6 +270,29 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+
+  /@portabletext/react/2.0.0_react@18.2.0:
+    resolution: {integrity: sha512-8AaTfRdRAzWxs2ADbMXV32/LTOJaRDp/m89hax/NTbC8F+OBOgHLBl+M7zSJDVIS1k+fuorFCLcOoq+PuAGJvQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    peerDependencies:
+      react: ^17 || ^18
+    dependencies:
+      '@portabletext/toolkit': 2.0.0
+      '@portabletext/types': 2.0.0
+      react: 18.2.0
+    dev: false
+
+  /@portabletext/toolkit/2.0.0:
+    resolution: {integrity: sha512-2Ljk7dnofxqam9u4B0h1UmpU18h+6SerSU/UanEHQW/IfjmOi48qZDre6MsOrQJ9/LsmlA8MDrmlCND5r/tg3A==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@portabletext/types': 2.0.0
+    dev: false
+
+  /@portabletext/types/2.0.0:
+    resolution: {integrity: sha512-AjbCPt9x9U0XFwLuVnIxweBrDAlKKcPJRVkpckjMk77VKEQoYvX2dITf5QtQf1TlLIx8zHJFtMcLmiqDJiGuLg==}
+    engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
+    dev: false
 
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
@@ -960,6 +987,10 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
