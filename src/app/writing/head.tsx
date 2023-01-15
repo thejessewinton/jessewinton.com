@@ -1,5 +1,5 @@
 const Head = () => {
-  return <title>Jesse Winton</title>;
+  return <title>Writing</title>;
 };
 
 export default Head;
