@@ -1,5 +1,7 @@
 import { Inter, Newsreader } from "@next/font/google";
 import { Footer } from "components/layout/footer/Footer";
+import { client } from "content/client";
+import { settingsSchema } from "content/schemas/settings";
 import type { ReactNode } from "react";
 
 import "styles/globals.css";
@@ -11,34 +13,22 @@ const newsreader = Newsreader({
   style: "italic",
 });
 
-const links = [
-  {
-    label: "Instagram",
-    href: "https://instagram.com/thejessewinton",
-  },
-  {
-    label: "Twitter",
-    href: "https://twitter.com/thejessewinton",
-  },
-  {
-    label: "YouTube",
-    href: "https://www.youtube.com/channel/thejessewinton",
-  },
-];
+const RootLayout = async ({ children }: { children: ReactNode }) => {
+  const loader = await client.fetch(`*[_type == "settings"][0]{socials}`);
+  const settings = settingsSchema.parse(loader);
 
-export type Links = typeof links;
-
-export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link href="/favicon.ico" rel="shortcut icon" />
-      <body className="scroll-smooth leading-loose antialiased dark:bg-neutral-900 dark:text-neutral-200">
-        <main className="mx-auto flex min-h-screen max-w-3xl flex-1 flex-col px-8 pt-48">
+      <body className="flex min-h-screen flex-col scroll-smooth leading-loose antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+        <main className="mx-auto flex w-full max-w-3xl flex-grow flex-col px-8 pt-24 lg:pt-48">
           {children}
         </main>
-        <Footer links={links} />
+        <Footer links={settings.socials} />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -1,6 +1,7 @@
-const className = "h-4 w-4 text-neutral-400";
+import { clsx } from "clsx";
+const classNames = "h-4 w-4 text-neutral-400";
 
-export const Arrow = () => {
+export const Arrow = ({ className }: { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +9,7 @@ export const Arrow = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={className}
+      className={clsx(classNames, className)}
     >
       <path
         strokeLinecap="round"
@@ -27,7 +28,7 @@ export const Document = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={className}
+      className={classNames}
     >
       <path
         strokeLinecap="round"
