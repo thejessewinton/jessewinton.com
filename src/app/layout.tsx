@@ -1,4 +1,5 @@
 import { Inter, Newsreader } from "@next/font/google";
+import { AnalyticsWrapper } from "components/analytics-wrapper/AnalyticsWrapper";
 import { Footer } from "components/layout/footer/Footer";
 import { client } from "content/client";
 import { settingsSchema } from "content/schemas/settings";
@@ -26,6 +27,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
           {children}
         </main>
         <Footer links={settings.socials} />
+        <AnalyticsWrapper />
       </body>
     </html>
   );
