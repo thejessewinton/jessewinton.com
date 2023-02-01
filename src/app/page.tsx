@@ -4,6 +4,8 @@ import { Intro } from "components/intro/Intro";
 import { client } from "content/client";
 import { introSchema } from "content/schemas/sections";
 
+export const revalidate = 3600;
+
 const Index = async () => {
   const loader = await client.fetch(`*[_type == "intro"][0]{heading,blurb}`);
   const intro = introSchema.parse(loader);
