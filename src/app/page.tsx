@@ -1,24 +1,24 @@
-import { PortableText } from "@portabletext/react";
+import { asHTML, asText } from "@prismicio/helpers";
 import { Intro } from "components/intro/Intro";
-
-import { client } from "content/client";
-import { introSchema } from "content/schemas/sections";
+import { getIndex } from "utils/prismic";
 
 export const revalidate = 3600;
 
 const Index = async () => {
-  const loader = await client.fetch(`*[_type == "intro"][0]{heading,blurb}`);
-  const intro = introSchema.parse(loader);
+  const { data } = await getIndex();
 
   return (
     <div className="flex flex-col gap-2 pt-32 pb-4">
       <h1 className="group relative inline-block max-w-xs cursor-pointer font-medium">
-        {intro.heading}
-        <Intro />
+        <>
+          {asText(data.heading)}
+          <Intro image={data.image} />
+        </>
       </h1>
-      <div className="mt-8">
-        <PortableText value={intro.blurb} />
-      </div>
+      <div
+        className="mt-8"
+        dangerouslySetInnerHTML={{ __html: asHTML(data.blurb) }}
+      />
     </div>
   );
 };

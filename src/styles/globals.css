@@ -6,7 +6,8 @@
   p {
     @apply mb-8;
   }
-  em {
+  em,
+  i {
     @apply font-serif font-normal;
   }
 }

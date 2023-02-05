@@ -9,16 +9,20 @@
 const config = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ["lh3.googleusercontent.com"],
-  },
-  optimizeFonts: true,
   experimental: {
     appDir: true,
-    fontLoaders: [
-      { loader: "@next/font/google", options: { subsets: ["latin"] } },
-    ],
+  },
+  images: {
+    domains: ["images.prismic.io"],
+  },
+  redirects: async () => {
+    return [
+      {
+        source: "/admin",
+        destination: "https://jesse-winton.prismic.io",
+        permanent: false,
+      },
+    ];
   },
 };
-
 export default config;

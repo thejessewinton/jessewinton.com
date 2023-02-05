@@ -9,9 +9,6 @@ module.exports = {
       padding: "1.25rem",
     },
     extend: {
-      colors: {
-        primary: "#111111",
-      },
       fontFamily: {
         sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
         serif: ["var(--font-newsreader)", ...defaultTheme.fontFamily.serif],

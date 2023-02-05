@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { writingsSchema as playsSchema } from "content/schemas/writing";
-import { client } from "content/client";
 import { Document } from "components/icons/Icons";
 import dayjs from "dayjs";
 import { Hero } from "components/hero/Hero";
@@ -40,25 +38,10 @@ const PlayCard = ({
 };
 
 const Plays = async () => {
-  const loader = await client.fetch(
-    `*[_type == "plays"]{title,synopsis,slug,date,"sample": sample.asset->url}`
-  );
-  const plays = playsSchema.parse(loader);
-
   return (
     <>
       <Hero title="Plays" />
-      <div className="flex flex-col space-y-8 divide-y divide-neutral-700">
-        {plays.map((writing) => (
-          <PlayCard
-            key={writing.title}
-            title={writing.title}
-            synopsis={writing.synopsis}
-            sample={`${writing.sample}?dl=`}
-            date={writing.date}
-          />
-        ))}
-      </div>
+      <div className="flex flex-col space-y-8 divide-y divide-neutral-700"></div>
     </>
   );
 };
