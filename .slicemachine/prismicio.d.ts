@@ -146,12 +146,69 @@ export interface SiteSettingsDocumentDataSocialsItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SiteSettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SiteSettingsDocumentData>, "site_settings", Lang>;
-export type AllDocumentTypes = IndexDocument | SiteSettingsDocument;
+/** Content for Writing documents */
+interface WritingDocumentData {
+    /**
+     * Title field in *Writing*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: writing.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Content field in *Writing*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: writing.content
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Writing*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: writing.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    meta_title: prismicT.KeyTextField;
+    /**
+     * Meta Description field in *Writing*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: writing.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    meta_description: prismicT.KeyTextField;
+}
+/**
+ * Writing document from Prismic
+ *
+ * - **API ID**: `writing`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WritingDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<WritingDocumentData>, "writing", Lang>;
+export type AllDocumentTypes = IndexDocument | SiteSettingsDocument | WritingDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { IndexDocumentData, IndexDocument, SiteSettingsDocumentData, SiteSettingsDocumentDataSocialsItem, SiteSettingsDocument, AllDocumentTypes };
+        export type { IndexDocumentData, IndexDocument, SiteSettingsDocumentData, SiteSettingsDocumentDataSocialsItem, SiteSettingsDocument, WritingDocumentData, WritingDocument, AllDocumentTypes };
     }
 }

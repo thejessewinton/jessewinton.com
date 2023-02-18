@@ -12,3 +12,12 @@ export const getSiteSettings = async () => {
 export const getIndex = async () => {
   return await client.getSingle("index");
 };
+
+export const getAllWriting = async () => {
+  return await client.getByType("writing", {
+    orderings: {
+      field: "document.first_publication_date",
+      order: "desc",
+    },
+  });
+};
