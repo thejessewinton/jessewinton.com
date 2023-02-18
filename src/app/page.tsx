@@ -9,12 +9,14 @@ const Index = async () => {
 
   return (
     <div className="flex flex-col gap-2 pb-4">
-      <h1 className="group relative inline-block max-w-xs cursor-pointer font-medium">
-        <>
-          {asText(data.heading)}
-          <Intro image={data.image} />
-        </>
-      </h1>
+      <div className="flex justify-between">
+        <h1 className="group relative inline-block max-w-xs cursor-pointer font-medium">
+          <>
+            {asText(data.heading)}
+            <Intro image={data.image} />
+          </>
+        </h1>
+      </div>
       <div
         className="mt-8"
         dangerouslySetInnerHTML={{ __html: asHTML(data.blurb) }}
