@@ -2,7 +2,7 @@ import { asHTML, asText } from "@prismicio/helpers";
 import { Intro } from "components/intro/Intro";
 import { getIndex } from "utils/prismic";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const Index = async () => {
   const { data } = await getIndex();
