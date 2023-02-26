@@ -54,7 +54,7 @@ const Index = async () => {
       </div>
       <MDX code={data.body.code} />
       {data.works ? (
-        <div className="group mt-8 grid gap-6 md:grid-cols-3">
+        <div className="group mt-8 mb-12 grid gap-6 md:grid-cols-3">
           {data.works.map((work) => (
             <WorksCard
               key={work.label}
