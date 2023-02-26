@@ -20,7 +20,7 @@ const socials = [
 export const Footer = () => {
   return (
     <motion.footer
-      initial={{ filter: "blur(10px)", opacity: 0 }}
+      initial={{ filter: "blur(2px)", opacity: 0 }}
       animate={{
         filter: "blur(0px)",
         opacity: 1,
