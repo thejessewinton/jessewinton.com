@@ -27,15 +27,15 @@ const WorksCard = ({
   url: string | undefined;
 }) => {
   return (
-    <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-[2px]">
-      <h2 className="mb-4 text-sm text-neutral-500">{label}</h2>
-      <div className="gap-6">
-        <Link href={url || ""} className="min-h-[90px]">
+    <Link href={url || ""} className="min-h-[90px]">
+      <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-[2px]">
+        <h2 className="mb-4 text-sm text-neutral-500">{label}</h2>
+        <div className="gap-6">
           <span>{title}</span>
           <div className="text-neutral-500">{description}</div>
-        </Link>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -54,18 +54,16 @@ const Index = async () => {
       </div>
       <MDX code={data.body.code} />
       {data.works ? (
-        <div className="mt-8">
-          <div className="group grid gap-6 md:grid-cols-3">
-            {data.works.map((work) => (
-              <WorksCard
-                key={work.label}
-                label={work.label}
-                title={work.title}
-                description={work.description}
-                url={work.url}
-              />
-            ))}
-          </div>
+        <div className="group mt-8 grid gap-6 md:grid-cols-3">
+          {data.works.map((work) => (
+            <WorksCard
+              key={work.label}
+              label={work.label}
+              title={work.title}
+              description={work.description}
+              url={work.url}
+            />
+          ))}
         </div>
       ) : null}
     </div>

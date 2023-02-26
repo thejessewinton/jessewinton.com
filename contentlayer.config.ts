@@ -12,7 +12,7 @@ const computedFields: ComputedFields = {
   },
 };
 
-const Works = defineNestedType(() => ({
+const Work = defineNestedType(() => ({
   name: "Works",
   fields: {
     label: { type: "string", required: true },
@@ -40,13 +40,49 @@ export const Index = defineDocumentType(() => ({
     description: {
       type: "string",
     },
-    image: {
+    works: {
+      type: "list",
+      of: Work,
+    },
+  },
+  computedFields,
+}));
+
+const Role = defineNestedType(() => ({
+  name: "Roles",
+  fields: {
+    character: { type: "string", required: true },
+    show: { type: "string", required: true },
+    company: {
       type: "string",
       required: true,
     },
-    works: {
+    director: {
+      type: "string",
+      required: true,
+    },
+    award: {
+      type: "string",
+      required: false,
+    },
+  },
+}));
+
+export const Resume = defineDocumentType(() => ({
+  name: "Resume",
+  filePathPattern: `resume.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    shows: {
       type: "list",
-      of: Works,
+      of: Role,
     },
   },
   computedFields,
@@ -54,5 +90,5 @@ export const Index = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Index],
+  documentTypes: [Index, Resume],
 });

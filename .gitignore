@@ -8,16 +8,13 @@
 # testing
 /coverage
 
-# database
-/prisma/db.sqlite
-/prisma/db.sqlite-journal
-
 # next.js
 /.next/
 /out/
 
 # production
 /build
+.contentlayer
 
 # misc
 .DS_Store
