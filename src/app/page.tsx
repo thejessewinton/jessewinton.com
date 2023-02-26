@@ -27,7 +27,7 @@ const WorksCard = ({
   url: string | undefined;
 }) => {
   return (
-    <Link href={url || ""} className="min-h-[90px] font-light">
+    <Link href={url || ""} className="relative -z-30 min-h-[90px] font-light">
       <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-[2px]">
         <h2 className="mb-4 text-sm text-neutral-500">{label}</h2>
         <div className="gap-6">
@@ -44,13 +44,13 @@ const Index = async () => {
 
   return (
     <div className="flex flex-col gap-2 pb-4">
-      <BlurIn delay={0}>
+      <BlurIn delay={0} className="relative z-50">
         <div className="flex justify-between">
-          <h1 className="group relative mb-4 inline-block max-w-xs cursor-pointer font-medium">
-            <>
+          <h1 className="group relative mb-4 inline-block w-full max-w-xs cursor-pointer font-medium">
+            <Link href="/images/headshot.webp">
               {data.title}
               <Intro />
-            </>
+            </Link>
           </h1>
         </div>
         <div
@@ -60,7 +60,7 @@ const Index = async () => {
       </BlurIn>
       {data.works ? (
         <BlurIn>
-          <div className="group mt-8 mb-12 grid gap-6 md:grid-cols-3">
+          <div className="group relative mt-8 mb-12 grid gap-6 md:grid-cols-3">
             {data.works.map((work) => (
               <WorksCard
                 key={work.label}

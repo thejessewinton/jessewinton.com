@@ -6,7 +6,7 @@ works:
   - label: "Past"
     title: "Resumé"
     description: "Get a glimpse of my previous work."
-    url: "#"
+    url: "/docs/jesse-winton-resume.pdf"
   - label: "Current"
     title: "Into the Woods"
     description: "Guest artist at Stonehill College."

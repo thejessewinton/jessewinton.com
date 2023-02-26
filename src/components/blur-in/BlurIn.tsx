@@ -2,11 +2,14 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { clsx } from "clsx";
 
 export const BlurIn = ({
+  className,
   children,
   delay = 0.25,
 }: {
+  className?: string;
   children: ReactNode;
   delay?: number;
 }) => {
@@ -27,7 +30,10 @@ export const BlurIn = ({
         ease: "easeInOut",
         delay,
       }}
-      className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-[2px]"
+      className={clsx(
+        "transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-[2px]",
+        className
+      )}
     >
       {children}
     </motion.div>
