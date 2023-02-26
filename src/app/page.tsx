@@ -47,10 +47,10 @@ const Index = async () => {
       <BlurIn delay={0} className="relative z-50">
         <div className="flex justify-between">
           <h1 className="group relative mb-4 inline-block w-full max-w-xs cursor-pointer font-medium">
-            <Link href="/images/headshot.webp">
+            <>
               {data.title}
               <Intro />
-            </Link>
+            </>
           </h1>
         </div>
         <div
