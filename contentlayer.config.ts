@@ -30,8 +30,8 @@ const Work = defineNestedType(() => ({
 
 export const Index = defineDocumentType(() => ({
   name: "Index",
-  filePathPattern: `index.mdx`,
-  contentType: "mdx",
+  filePathPattern: `index.md`,
+  contentType: "markdown",
   fields: {
     title: {
       type: "string",
