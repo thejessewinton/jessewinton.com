@@ -15,14 +15,39 @@ export type Index = {
   type: 'Index'
   title: string
   description?: string | undefined
-  image: string
   works?: Works[] | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
+}
+
+export type Resume = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Resume'
+  title: string
+  description?: string | undefined
+  shows?: Roles[] | undefined
   /** MDX file body */
   body: MDX
   slug: string
 }  
 
 /** Nested types */
+export type Roles = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Roles'
+  character: string
+  show: string
+  company: string
+  director: string
+  award?: string | undefined
+
+}
+
 export type Works = {
   /** File path relative to `contentDirPath` */
   _id: string
@@ -40,11 +65,11 @@ export type Works = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Index
-export type DocumentTypeNames = 'Index'
+export type DocumentTypes = Index | Resume
+export type DocumentTypeNames = 'Index' | 'Resume'
 
-export type NestedTypes = Works
-export type NestedTypeNames = 'Works'
+export type NestedTypes = Roles | Works
+export type NestedTypeNames = 'Roles' | 'Works'
 
 
 export interface ContentlayerGenTypes {
@@ -63,9 +88,11 @@ declare global {
 
 export type DocumentTypeMap = {
   Index: Index
+  Resume: Resume
 }
 
 export type NestedTypeMap = {
+  Roles: Roles
   Works: Works
 }
 
