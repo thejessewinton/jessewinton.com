@@ -1,28 +1,33 @@
-import { asLink } from "@prismicio/helpers";
 import Link from "next/link";
-import type { SiteSettingsDocumentDataSocialsItem } from "../../../.slicemachine/prismicio";
 
-export const Footer = ({
-  socials,
-}: {
-  socials: SiteSettingsDocumentDataSocialsItem[];
-}) => {
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://instagram.com/thejessewinton",
+  },
+  {
+    label: "Twitter",
+    href: "https://twitter.com/thejessewinton",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@thejessewinton",
+  },
+];
+
+export const Footer = () => {
   return (
     <footer className="mb-0 mt-auto flex h-14 w-full items-center border-t border-t-neutral-700">
       <div className="mx-auto flex w-full max-w-3xl flex-row items-center justify-between gap-4 px-8 text-neutral-400">
         <nav className="flex items-center justify-between gap-6 text-sm">
           {socials.map((social) => (
-            <Link
-              href={asLink(social.link) as string}
-              key={social.label}
-              target="_blank"
-            >
+            <Link href={social.href} key={social.label} target="_blank">
               {social.label}
             </Link>
           ))}
         </nav>
 
-        <em>{new Date().getFullYear()}</em>
+        <em className="font-serif">{new Date().getFullYear()}</em>
       </div>
     </footer>
   );

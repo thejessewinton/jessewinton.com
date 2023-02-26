@@ -5,12 +5,15 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import("./src/env/server.mjs"));
 
+import { withContentlayer } from "next-contentlayer";
+
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
     appDir: true,
+    mdxRs: true,
   },
   images: {
     domains: ["images.prismic.io"],
@@ -25,4 +28,4 @@ const config = {
     ];
   },
 };
-export default config;
+export default withContentlayer(config);

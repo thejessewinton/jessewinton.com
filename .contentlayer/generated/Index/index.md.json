@@ -1,0 +1,34 @@
+{
+  "title": "Jesse Winton",
+  "description": "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
+  "image": "/images/main.webp",
+  "past": {
+    "label": "Resumé",
+    "description": "Get a glimpse of my past work.",
+    "url": "/resume"
+  },
+  "current": {
+    "label": "Into the Woods",
+    "description": "Guest artist at Stonehill College.",
+    "url": "#"
+  },
+  "upcoming": {
+    "label": "The Last Five Years",
+    "description": "Guest artist at Stonehill College.",
+    "url": "#"
+  },
+  "body": {
+    "raw": "\nActor, playwright, and award-winning musician living and working outside *Boston, MA*. Leftist; deeply invested in theatre as a medium for social change. Entertainment is *overrated*.\n\nWant to reach out? Find me on Twitter *@thejessewinton*, or email me at *hi@jessewinton.com*.\n",
+    "html": "<p>Actor, playwright, and award-winning musician living and working outside <em>Boston, MA</em>. Leftist; deeply invested in theatre as a medium for social change. Entertainment is <em>overrated</em>.</p>\n<p>Want to reach out? Find me on Twitter <em>@thejessewinton</em>, or email me at <em>hi@jessewinton.com</em>.</p>"
+  },
+  "_id": "index.md",
+  "_raw": {
+    "sourceFilePath": "index.md",
+    "sourceFileName": "index.md",
+    "sourceFileDir": ".",
+    "contentType": "markdown",
+    "flattenedPath": ""
+  },
+  "type": "Index",
+  "slug": "/"
+}
