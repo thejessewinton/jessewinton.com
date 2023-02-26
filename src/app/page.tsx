@@ -46,7 +46,7 @@ const Index = async () => {
     <div className="flex flex-col gap-2 pb-4">
       <BlurIn delay={0}>
         <div className="flex justify-between">
-          <h1 className="group relative inline-block max-w-xs cursor-pointer font-medium">
+          <h1 className="group relative mb-4 inline-block max-w-xs cursor-pointer font-medium">
             <>
               {data.title}
               <Intro />
