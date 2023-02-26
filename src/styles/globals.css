@@ -6,4 +6,9 @@
   p {
     @apply mb-8;
   }
+
+  em,
+  i {
+    @apply font-serif font-normal italic;
+  }
 }
