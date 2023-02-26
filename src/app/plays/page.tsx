@@ -2,6 +2,11 @@ import Link from "next/link";
 import { Document } from "components/icons/Icons";
 import dayjs from "dayjs";
 import { Hero } from "components/hero/Hero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Plays",
+};
 
 const PlayCard = ({
   title,

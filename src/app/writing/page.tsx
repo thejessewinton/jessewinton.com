@@ -1,33 +1,34 @@
-import { asText } from "@prismicio/helpers";
 import { Hero } from "components/hero/Hero";
 import dayjs from "dayjs";
+import type { Metadata } from "next";
 import Link from "next/link";
-import type { WritingDocument } from "prismic/generated";
-import { getAllWriting } from "utils/prismic";
+
+export const metadata: Metadata = {
+  title: "Writing",
+};
 
 const Plays = async () => {
-  const { results } = await getAllWriting();
-  const postsByYear = results.reduce((acc, post) => {
-    const year = dayjs(post.first_publication_date).year();
-    acc[year] = acc[year] || [];
-    acc[year]?.push(post);
-    return acc;
-  }, {} as { [key: string]: WritingDocument[] });
+  // const postsByYear = results.reduce((acc, post) => {
+  //   const year = dayjs(post.first_publication_date).year();
+  //   acc[year] = acc[year] || [];
+  //   acc[year]?.push(post);
+  //   return acc;
+  // }, {} as { [key: string]: any[] });
 
-  const sortedPostsByYear = Object.entries(postsByYear)
-    .sort((a, b) => {
-      return Number(a[0]) - Number(b[0]);
-    })
-    .reduce((acc, [year, posts]) => {
-      acc[year] = posts;
-      return acc;
-    }, {} as { [key: string]: WritingDocument[] });
+  // const sortedPostsByYear = Object.entries(postsByYear)
+  //   .sort((a, b) => {
+  //     return Number(a[0]) - Number(b[0]);
+  //   })
+  //   .reduce((acc, [year, posts]) => {
+  //     acc[year] = posts;
+  //     return acc;
+  //   }, {} as { [key: string]: WritingDocument[] });
 
   return (
     <>
       <Hero title="Writing" />
       <div className="group flex flex-col divide-y divide-neutral-700 border-t border-neutral-700">
-        {Object.entries(sortedPostsByYear).map(([year, posts]) => {
+        {/* {Object.entries(sortedPostsByYear).map(([year, posts]) => {
           return (
             <div className="flex gap-32" key={year}>
               <span className="pt-3 text-sm text-neutral-500">{year}</span>
@@ -45,7 +46,7 @@ const Plays = async () => {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
     </>
   );
