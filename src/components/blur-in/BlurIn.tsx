@@ -14,7 +14,7 @@ export const BlurIn = ({
     <motion.div
       initial={{
         translateY: 20,
-        filter: "blur(10px)",
+        filter: "blur(2px)",
         opacity: 0,
       }}
       animate={{
