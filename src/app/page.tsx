@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getHome } from "utils/content";
+import { getIndex } from "utils/content";
 import { Intro } from "components/intro/Intro";
 
 export const generateMetadata = (): Metadata => {
-  const data = getHome();
+  const { data } = getIndex();
 
   return {
     title: data.title,
@@ -13,7 +13,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 const Index = async () => {
-  const data = getHome();
+  const { data } = getIndex();
 
   return (
     <div className="flex flex-col gap-2 pb-4">
@@ -39,7 +39,7 @@ const Index = async () => {
               href={work.url || ""}
               className="relative min-h-[90px] font-light"
             >
-              <div className="transition-opacity duration-500 hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
+              <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
                 <h2 className="mb-4 text-sm text-neutral-400">{work.label}</h2>
                 <div className="gap-6">
                   <span>{work.title}</span>
