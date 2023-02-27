@@ -13,7 +13,6 @@ const config = {
   swcMinify: true,
   experimental: {
     appDir: true,
-    mdxRs: true,
   },
   images: {
     domains: ["images.prismic.io"],

@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getHome } from "utils/content";
 import { Intro } from "components/intro/Intro";
-import { BlurIn } from "components/blur-in/BlurIn";
 
 export const revalidate = 60;
 
@@ -28,7 +27,7 @@ const WorksCard = ({
 }) => {
   return (
     <Link href={url || ""} className="relative min-h-[90px] font-light">
-      <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-[2px]">
+      <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
         <h2 className="mb-4 text-sm text-neutral-500">{label}</h2>
         <div className="gap-6">
           <span>{title}</span>
@@ -44,7 +43,7 @@ const Index = async () => {
 
   return (
     <div className="flex flex-col gap-2 pb-4">
-      <BlurIn delay={0} className="relative z-50">
+      <div className="relative z-50 animate-enter">
         <div className="flex justify-between">
           <h1 className="group relative mb-4 inline-block w-full max-w-xs cursor-pointer font-medium">
             <>
@@ -57,21 +56,20 @@ const Index = async () => {
           className="font-light"
           dangerouslySetInnerHTML={{ __html: data.body.html }}
         />
-      </BlurIn>
+      </div>
+
       {data.works ? (
-        <BlurIn>
-          <div className="group relative mt-8 mb-12 grid gap-6 md:grid-cols-3">
-            {data.works.map((work) => (
-              <WorksCard
-                key={work.label}
-                label={work.label}
-                title={work.title}
-                description={work.description}
-                url={work.url}
-              />
-            ))}
-          </div>
-        </BlurIn>
+        <div className="group relative mt-8 mb-12 grid animate-enter gap-6 animation-delay-300 md:grid-cols-3">
+          {data.works.map((work) => (
+            <WorksCard
+              key={work.label}
+              label={work.label}
+              title={work.title}
+              description={work.description}
+              url={work.url}
+            />
+          ))}
+        </div>
       ) : null}
     </div>
   );

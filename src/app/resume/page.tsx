@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getResume } from "utils/content";
 import { Intro } from "components/intro/Intro";
-import { MDX } from "components/mdx/MDX";
 
 export const revalidate = 60;
 
@@ -57,7 +56,10 @@ const Index = async () => {
           </>
         </h1>
       </div>
-      <MDX code={data.body.code} />
+      <div
+        className="font-light"
+        dangerouslySetInnerHTML={{ __html: data.body.html }}
+      />
       {data.shows ? (
         <div className="mt-8 flex flex-col gap-8">
           {data.shows.map((show) => (

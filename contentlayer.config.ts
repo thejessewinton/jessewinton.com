@@ -70,8 +70,8 @@ const Role = defineNestedType(() => ({
 
 export const Resume = defineDocumentType(() => ({
   name: "Resume",
-  filePathPattern: `resume.mdx`,
-  contentType: "mdx",
+  filePathPattern: `resume.md`,
+  contentType: "markdown",
   fields: {
     title: {
       type: "string",
