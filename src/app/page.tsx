@@ -28,10 +28,10 @@ const WorksCard = ({
   return (
     <Link href={url || ""} className="relative min-h-[90px] font-light">
       <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
-        <h2 className="mb-4 text-sm text-neutral-500">{label}</h2>
+        <h2 className="mb-4 text-sm text-neutral-400">{label}</h2>
         <div className="gap-6">
           <span>{title}</span>
-          <div className="text-neutral-500">{description}</div>
+          <div className="text-neutral-400">{description}</div>
         </div>
       </div>
     </Link>
