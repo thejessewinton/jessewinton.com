@@ -10,6 +10,10 @@ const computedFields: ComputedFields = {
     type: "string",
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
+  slugAsParams: {
+    type: "string",
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+  },
 };
 
 export const Index = defineDocumentType(() => ({
@@ -46,39 +50,26 @@ export const Index = defineDocumentType(() => ({
   computedFields,
 }));
 
-export const Resume = defineDocumentType(() => ({
-  name: "Resume",
-  filePathPattern: "resume.md",
+export const Writing = defineDocumentType(() => ({
+  name: "Writing",
+  filePathPattern: "writing/**/*.md",
   contentType: "markdown",
   fields: {
     title: {
       type: "string",
       required: true,
     },
-    description: {
+    summary: {
       type: "string",
+      required: true,
     },
-    shows: {
-      type: "list",
-      of: defineNestedType(() => ({
-        name: "Roles",
-        fields: {
-          character: { type: "string", required: true },
-          show: { type: "string", required: true },
-          company: {
-            type: "string",
-            required: true,
-          },
-          director: {
-            type: "string",
-            required: true,
-          },
-          award: {
-            type: "string",
-            required: false,
-          },
-        },
-      })),
+    date: {
+      type: "string",
+      required: true,
+    },
+    featured: {
+      type: "boolean",
+      required: false,
     },
   },
   computedFields,
@@ -86,5 +77,5 @@ export const Resume = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Index, Resume],
+  documentTypes: [Index, Writing],
 });

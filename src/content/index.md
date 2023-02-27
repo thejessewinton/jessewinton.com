@@ -11,7 +11,7 @@ works:
     title: "Into the Woods"
     description: "Guest artist at Stonehill College."
     url: "#"
-  - label: "Upcoming"
+  - label: "Future"
     title: "TBA"
     description: "More in the works. Details soon."
     url: "#"
