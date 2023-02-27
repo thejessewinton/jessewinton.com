@@ -12,25 +12,9 @@ const computedFields: ComputedFields = {
   },
 };
 
-const Work = defineNestedType(() => ({
-  name: "Works",
-  fields: {
-    label: { type: "string", required: true },
-    title: { type: "string", required: true },
-    description: {
-      type: "string",
-      required: true,
-    },
-    url: {
-      type: "string",
-      required: false,
-    },
-  },
-}));
-
 export const Index = defineDocumentType(() => ({
   name: "Index",
-  filePathPattern: `index.md`,
+  filePathPattern: "index.md",
   contentType: "markdown",
   fields: {
     title: {
@@ -42,35 +26,29 @@ export const Index = defineDocumentType(() => ({
     },
     works: {
       type: "list",
-      of: Work,
+      of: defineNestedType(() => ({
+        name: "Works",
+        fields: {
+          label: { type: "string", required: true },
+          title: { type: "string", required: true },
+          description: {
+            type: "string",
+            required: true,
+          },
+          url: {
+            type: "string",
+            required: false,
+          },
+        },
+      })),
     },
   },
   computedFields,
 }));
 
-const Role = defineNestedType(() => ({
-  name: "Roles",
-  fields: {
-    character: { type: "string", required: true },
-    show: { type: "string", required: true },
-    company: {
-      type: "string",
-      required: true,
-    },
-    director: {
-      type: "string",
-      required: true,
-    },
-    award: {
-      type: "string",
-      required: false,
-    },
-  },
-}));
-
 export const Resume = defineDocumentType(() => ({
   name: "Resume",
-  filePathPattern: `resume.md`,
+  filePathPattern: "resume.md",
   contentType: "markdown",
   fields: {
     title: {
@@ -82,7 +60,25 @@ export const Resume = defineDocumentType(() => ({
     },
     shows: {
       type: "list",
-      of: Role,
+      of: defineNestedType(() => ({
+        name: "Roles",
+        fields: {
+          character: { type: "string", required: true },
+          show: { type: "string", required: true },
+          company: {
+            type: "string",
+            required: true,
+          },
+          director: {
+            type: "string",
+            required: true,
+          },
+          award: {
+            type: "string",
+            required: false,
+          },
+        },
+      })),
     },
   },
   computedFields,
