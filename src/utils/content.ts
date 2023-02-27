@@ -1,12 +1,20 @@
-import { allIndices, allWritings, type Index, type Writing } from "content";
+import {
+  allIndices,
+  allPlays,
+  allWritings,
+  type Index,
+  type Writing,
+} from "content";
 import dayjs from "dayjs";
 import * as R from "remeda";
 
 export const getIndex = () => {
-  return {
-    data: allIndices.find((doc) => doc.slug === "/") as Index,
-    featuredWritings: allWritings.filter((doc) => doc.featured),
-  };
+  return allIndices.find((doc) => doc.slug === "/") as Index;
+};
+
+export const getPlays = () => {
+  const all = R.groupBy(allPlays, (x) => dayjs(x.date).year());
+  return R.sortBy(Object.entries(all), ([year]) => -year);
 };
 
 export const getAllWritings = () => {

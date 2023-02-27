@@ -16,7 +16,7 @@ const computedFields: ComputedFields = {
   },
 };
 
-export const Index = defineDocumentType(() => ({
+const Index = defineDocumentType(() => ({
   name: "Index",
   filePathPattern: "index.md",
   contentType: "markdown",
@@ -50,7 +50,7 @@ export const Index = defineDocumentType(() => ({
   computedFields,
 }));
 
-export const Writing = defineDocumentType(() => ({
+const Writing = defineDocumentType(() => ({
   name: "Writing",
   filePathPattern: "writing/**/*.md",
   contentType: "markdown",
@@ -75,7 +75,36 @@ export const Writing = defineDocumentType(() => ({
   computedFields,
 }));
 
+const Plays = defineDocumentType(() => ({
+  name: "Plays",
+  filePathPattern: "plays/**/*.md",
+  contentType: "markdown",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    synopsis: {
+      type: "string",
+      required: true,
+    },
+    date: {
+      type: "string",
+      required: true,
+    },
+    featured: {
+      type: "boolean",
+      required: false,
+    },
+    sample: {
+      type: "string",
+      required: false,
+    },
+  },
+  computedFields,
+}));
+
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Index, Writing],
+  documentTypes: [Index, Writing, Plays],
 });

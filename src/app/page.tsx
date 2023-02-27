@@ -4,7 +4,7 @@ import { getIndex } from "utils/content";
 import { Intro } from "components/intro/Intro";
 
 export const generateMetadata = (): Metadata => {
-  const { data } = getIndex();
+  const data = getIndex();
 
   return {
     title: data.title,
@@ -13,7 +13,7 @@ export const generateMetadata = (): Metadata => {
 };
 
 const Index = async () => {
-  const { data } = getIndex();
+  const data = getIndex();
 
   return (
     <div className="flex flex-col gap-2 pb-4">
@@ -32,17 +32,18 @@ const Index = async () => {
       </div>
 
       {data.works ? (
-        <div className="group relative mt-8 mb-12 grid animate-enter gap-6 animation-delay-300 md:grid-cols-3">
+        <div className="group relative mt-8 mb-12 grid animate-enter gap-16 animation-delay-300 md:grid-cols-3">
           {data.works.map((work) => (
             <Link
               key={work.label}
               href={work.url || ""}
+              target={work.url?.startsWith("http") ? "_blank" : "_self"}
               className="relative min-h-[90px] font-light"
             >
-              <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
+              <div className="transition-all hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
                 <h2 className="mb-4 text-sm text-neutral-400">{work.label}</h2>
                 <div className="gap-6">
-                  <span>{work.title}</span>
+                  <span className="font-normal">{work.title}</span>
                   <div className="text-neutral-400">{work.description}</div>
                 </div>
               </div>
