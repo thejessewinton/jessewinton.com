@@ -14,17 +14,6 @@ const config = {
   experimental: {
     appDir: true,
   },
-  images: {
-    domains: ["images.prismic.io"],
-  },
-  redirects: async () => {
-    return [
-      {
-        source: "/admin",
-        destination: "https://jesse-winton.prismic.io",
-        permanent: false,
-      },
-    ];
-  },
 };
+
 export default withContentlayer(config);
