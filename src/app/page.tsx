@@ -38,13 +38,15 @@ const Index = async () => {
               key={work.label}
               href={work.url || ""}
               target={work.url?.startsWith("http") ? "_blank" : "_self"}
-              className="relative min-h-[90px] font-light"
+              className="relative min-h-[90px] font-light transition-all hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs"
             >
-              <div className="transition-all hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
-                <h2 className="mb-4 text-sm text-neutral-400">{work.label}</h2>
-                <div className="gap-6">
-                  <span className="font-normal">{work.title}</span>
-                  <div className="text-neutral-400">{work.description}</div>
+              <h2 className="mb-4 text-sm text-neutral-900 dark:text-neutral-400">
+                {work.label}
+              </h2>
+              <div className="gap-6">
+                <span className="font-normal">{work.title}</span>
+                <div className="text-neutral-900 dark:text-neutral-400">
+                  {work.description}
                 </div>
               </div>
             </Link>
