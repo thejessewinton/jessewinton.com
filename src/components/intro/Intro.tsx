@@ -12,7 +12,7 @@ export const Intro = () => {
       <Image
         src={Headshot}
         alt={""}
-        className="absolute right-0 hidden rounded-md shadow-xl group-hover:block"
+        className="absolute right-0 hidden shadow-xl group-hover:block"
         style={{
           transform:
             position.x && position.y
