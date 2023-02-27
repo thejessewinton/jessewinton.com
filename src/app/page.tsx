@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { getHome } from "utils/content";
 import { Intro } from "components/intro/Intro";
 
-export const revalidate = 60;
-
 export const generateMetadata = (): Metadata => {
   const data = getHome();
 
@@ -12,30 +10,6 @@ export const generateMetadata = (): Metadata => {
     title: data.title,
     description: data.description,
   };
-};
-
-const WorksCard = ({
-  label,
-  title,
-  description,
-  url,
-}: {
-  label: string;
-  title: string;
-  description: string;
-  url: string | undefined;
-}) => {
-  return (
-    <Link href={url || ""} className="relative min-h-[90px] font-light">
-      <div className="transition-opacity hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
-        <h2 className="mb-4 text-sm text-neutral-500">{label}</h2>
-        <div className="gap-6">
-          <span>{title}</span>
-          <div className="text-neutral-500">{description}</div>
-        </div>
-      </div>
-    </Link>
-  );
 };
 
 const Index = async () => {
@@ -61,13 +35,19 @@ const Index = async () => {
       {data.works ? (
         <div className="group relative mt-8 mb-12 grid animate-enter gap-6 animation-delay-300 md:grid-cols-3">
           {data.works.map((work) => (
-            <WorksCard
+            <Link
               key={work.label}
-              label={work.label}
-              title={work.title}
-              description={work.description}
-              url={work.url}
-            />
+              href={work.url || ""}
+              className="relative min-h-[90px] font-light"
+            >
+              <div className="transition-opacity duration-500 hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs">
+                <h2 className="mb-4 text-sm text-neutral-400">{work.label}</h2>
+                <div className="gap-6">
+                  <span>{work.title}</span>
+                  <div className="text-neutral-400">{work.description}</div>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       ) : null}
