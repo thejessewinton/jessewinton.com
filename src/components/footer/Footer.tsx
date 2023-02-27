@@ -17,7 +17,7 @@ const socials = [
 
 export const Footer = () => {
   return (
-    <footer className="mb-0 mt-auto flex h-14 w-full animate-blur items-center border-t border-t-neutral-700 animation-delay-500">
+    <footer className="mb-0 mt-12 flex h-14 w-full animate-blur items-center border-t border-t-neutral-700 animation-delay-500">
       <div className="mx-auto flex w-full max-w-3xl flex-row items-center justify-between gap-4 px-8 text-neutral-400">
         <nav className="flex items-center justify-between gap-6 text-sm">
           {socials.map((social) => (
