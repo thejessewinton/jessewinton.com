@@ -18,14 +18,13 @@ const Index = async () => {
   return (
     <div className="flex flex-col gap-2 pb-4">
       <div className="relative z-50 animate-enter">
-        <div className="flex justify-between">
-          <h1 className="group relative mb-4 inline-block w-full max-w-xs cursor-pointer font-medium">
-            <>
-              {data.title}
-              <Intro />
-            </>
-          </h1>
-        </div>
+        <h1 className="group relative mb-4 inline-block w-full max-w-xs cursor-pointer font-medium">
+          <>
+            {data.title}
+            <Intro />
+          </>
+        </h1>
+
         <div
           className="font-light"
           dangerouslySetInnerHTML={{ __html: data.body.html }}
