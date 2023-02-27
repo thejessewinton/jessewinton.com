@@ -20,7 +20,7 @@ module.exports = {
       blur: {
         xs: "2px",
       },
-      keyframes: {
+      keyframes: (theme) => ({
         "animate-blur": {
           "0%": {
             filter: "blur(5px)",
@@ -31,7 +31,15 @@ module.exports = {
         },
         "animate-up": {
           "0%": {
-            transform: "translateY(20px)",
+            transform: `translateY(${theme("spacing.4")})`,
+          },
+          "100%": {
+            transform: "translateY(0px)",
+          },
+        },
+        "animate-scale": {
+          "0%": {
+            transform: `scale(${theme("scale.105")})`,
           },
           "100%": {
             transform: "translateY(0px)",
@@ -45,10 +53,10 @@ module.exports = {
             opacity: 1,
           },
         },
-      },
+      }),
       animation: {
         enter:
-          "animate-up 0.75s ease-in-out both, animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both",
+          "animate-scale 0.75s ease-in-out both, animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both",
         up: "animate-up 0.75s ease-in-out both",
         blur: "animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both",
       },
