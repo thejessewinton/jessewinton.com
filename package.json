@@ -10,7 +10,6 @@
     "clean": "rm -rf .next node_modules .contentlayer"
   },
   "dependencies": {
-    "@next/mdx": "^13.2.1",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "@vercel/analytics": "^0.1.6",
@@ -22,9 +21,9 @@
     "next-contentlayer": "^0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-wrap-balancer": "^0.4.0",
     "remeda": "^1.8.0",
     "sharp": "^0.31.3",
+    "swr": "^2.0.4",
     "zod": "^3.20.2"
   },
   "devDependencies": {
