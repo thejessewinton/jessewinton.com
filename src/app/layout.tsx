@@ -37,13 +37,6 @@ export const metadata: Metadata = {
     title: "Jesse Winton",
     description:
       "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
-    images: [
-      {
-        url: "https://jessewinton.com/images/og.jpg",
-        width: 1760,
-        height: 924,
-      },
-    ],
   },
   robots: {
     index: true,
@@ -54,7 +47,8 @@ export const metadata: Metadata = {
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      {/* band aid for meta image */}
+      <meta name="og:image" content="https://jessewinton.com/images/og.jpg" />
       <link href="/favicon.ico" rel="shortcut icon" />
       <body className="flex min-h-screen flex-col items-center justify-center scroll-smooth leading-loose text-neutral-900 antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
         <Blur />
