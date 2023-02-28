@@ -75,5 +75,6 @@ module.exports = {
         }
       );
     }),
+    require("tailwind-gradient-mask-image"),
   ],
 };

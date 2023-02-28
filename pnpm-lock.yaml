@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/node': 18.0.0
+  '@types/node': 18.14.2
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   '@typescript-eslint/eslint-plugin': ^5.48.0
@@ -25,6 +25,7 @@ specifiers:
   sharp: ^0.31.3
   slice-machine-ui: ^0.7.0
   swr: ^2.0.4
+  tailwind-gradient-mask-image: ^1.0.0
   tailwindcss: ^3.2.7
   typescript: 4.7.4
   zod: ^3.20.2
@@ -44,10 +45,11 @@ dependencies:
   remeda: 1.8.0
   sharp: 0.31.3
   swr: 2.0.4_react@18.2.0
+  tailwind-gradient-mask-image: 1.0.0
   zod: 3.20.2
 
 devDependencies:
-  '@types/node': 18.0.0
+  '@types/node': 18.14.2
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -589,7 +591,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.7.5
-      '@types/node': 18.0.0
+      '@types/node': 18.14.2
     dev: false
 
   /@grpc/proto-loader/0.6.13:
@@ -2221,7 +2223,7 @@ packages:
   /@types/http-proxy/1.17.9:
     resolution: {integrity: sha512-QsbSjA/fSk7xB+UXlCT3wHBy5ai9wOcNDWwZAtud+jXhwOM3l+EYZh8Lng4+/6n8uar0J7xILzqftJdJ/Wdfkw==}
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.14.2
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -2258,8 +2260,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/18.0.0:
-    resolution: {integrity: sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==}
+  /@types/node/18.14.2:
+    resolution: {integrity: sha512-1uEQxww3DaghA0RxqHx0O0ppVlo43pJhepY51OxuQIKHpjbnYLA7vcdwioNPzIqmC2u3I/dmylcqjlh0e7AyUA==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -2319,7 +2321,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.0.0
+      '@types/node': 18.14.2
     dev: true
     optional: true
 
@@ -7273,7 +7275,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 18.0.0
+      '@types/node': 18.14.2
       long: 4.0.0
     dev: false
 
@@ -7292,7 +7294,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 18.0.0
+      '@types/node': 18.14.2
       long: 5.2.1
     dev: false
 
@@ -8264,6 +8266,10 @@ packages:
     dependencies:
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false
+
+  /tailwind-gradient-mask-image/1.0.0:
+    resolution: {integrity: sha512-eZJhn6wHZ0Irfpq5sm0ErewH6IC82gqjfVsDQ7MYrJcfTgepOoTI6EryLppNPoZds4EeD6/H0WrysT8HE90H5g==}
     dev: false
 
   /tailwindcss/3.2.7_postcss@8.4.20:

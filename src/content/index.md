@@ -3,11 +3,11 @@ title: "Jesse Winton"
 description: "Actor, playwright, and award-winning musician living and working outside Boston, MA."
 
 works:
-  - label: "Past"
+  - label: "Before"
     title: "Resumé"
     description: "Get a glimpse of my previous work."
     url: "/docs/resume.pdf"
-  - label: "Current"
+  - label: "Now"
     title: "Into the Woods"
     description: "Guest artist at Stonehill College."
     url: "https://www.stonehill.edu/programs/theatre/stonehill-theatre-company"

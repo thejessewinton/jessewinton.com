@@ -12,6 +12,7 @@ const nowPlayingSchema = z.object({
           name: z.string(),
         })
       ),
+      href: z.string().url(),
     }),
   }),
 });

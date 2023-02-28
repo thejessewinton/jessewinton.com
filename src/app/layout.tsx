@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import "styles/globals.css";
+import { Blur } from "components/blur/Blur";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -17,7 +18,7 @@ const newsreader = Newsreader({
   display: "optional",
   style: "italic",
   subsets: ["latin"],
-  weight: ["300"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link href="/favicon.ico" rel="shortcut icon" />
       <body className="flex min-h-screen flex-col items-center justify-center scroll-smooth leading-loose text-neutral-900 antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+        <Blur />
         <main className="mx-auto mt-32 flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-8">
           {children}
         </main>
