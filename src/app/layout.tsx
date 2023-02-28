@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@thejessewinton",
     creator: "@thejessewinton",
-    images: ["/images/og.jpg"],
+    images: ["https://jessewinton.com/images/og.jpg"],
     description:
       "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Jesse Winton",
     description:
       "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
-    images: ["/images/og.jpg"],
+    images: ["https://jessewinton.com/images/og.jpg"],
   },
 };
 
