@@ -29,13 +29,6 @@ export const metadata: Metadata = {
   twitter: {
     title: "Jesse Winton",
     card: "summary_large_image",
-    images: [
-      {
-        url: "https://jessewinton.com/images/og.jpg",
-        width: 1920,
-        height: 1080,
-      },
-    ],
   },
   openGraph: {
     type: "website",
@@ -47,8 +40,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://jessewinton.com/images/og.jpg",
-        width: 1920,
-        height: 1080,
+        width: 1760,
+        height: 924,
       },
     ],
   },
