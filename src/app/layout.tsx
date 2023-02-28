@@ -27,12 +27,8 @@ export const metadata: Metadata = {
     template: "%s — Jesse Winton",
   },
   twitter: {
+    title: "Jesse Winton",
     card: "summary_large_image",
-    site: "@thejessewinton",
-    creator: "@thejessewinton",
-    images: ["https://jessewinton.com/images/og.jpg"],
-    description:
-      "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
   },
   openGraph: {
     type: "website",
@@ -41,7 +37,17 @@ export const metadata: Metadata = {
     title: "Jesse Winton",
     description:
       "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
-    images: ["https://jessewinton.com/images/og.jpg"],
+    images: [
+      {
+        url: "https://jessewinton.com/images/og.jpg",
+        width: 1920,
+        height: 1080,
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
