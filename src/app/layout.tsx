@@ -26,6 +26,23 @@ export const metadata: Metadata = {
     default: "Jesse Winton",
     template: "%s — Jesse Winton",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@thejessewinton",
+    creator: "@thejessewinton",
+    images: ["/images/og.jpg"],
+    description:
+      "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://jessewinton.com",
+    title: "Jesse Winton",
+    description:
+      "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
+    images: ["/images/og.jpg"],
+  },
 };
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
