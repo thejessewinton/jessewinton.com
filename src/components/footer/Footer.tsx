@@ -26,8 +26,7 @@ export const Footer = () => {
             </Link>
           ))}
         </nav>
-
-        <em className="font-serif">{new Date().getFullYear()}</em>
+        <span className="text-sm">{new Date().getFullYear()}</span>
       </div>
     </footer>
   );

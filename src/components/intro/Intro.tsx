@@ -17,7 +17,7 @@ export const Intro = () => {
           transform:
             position.x && position.y
               ? `translate(${position.x / 3}px, ${position.y / 8}px)`
-              : "",
+              : undefined,
         }}
         placeholder="blur"
       />

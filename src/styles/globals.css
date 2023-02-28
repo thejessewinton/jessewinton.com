@@ -9,6 +9,6 @@
 
   em,
   i {
-    @apply font-serif font-normal italic;
+    @apply font-serif italic;
   }
 }

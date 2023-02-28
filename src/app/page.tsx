@@ -32,13 +32,13 @@ const Index = async () => {
       </div>
 
       {data.works ? (
-        <div className="group relative mt-8 mb-12 grid animate-enter gap-16 animation-delay-300 md:grid-cols-3">
+        <div className="group pointer-events-none relative mt-8 mb-12 grid animate-enter gap-12 animation-delay-300 sm:grid-cols-3">
           {data.works.map((work) => (
             <Link
               key={work.label}
               href={work.url || ""}
               target={work.url?.startsWith("http") ? "_blank" : "_self"}
-              className="relative min-h-[90px] font-light transition-all hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs"
+              className="pointer-events-auto relative min-h-[90px] font-light transition-all hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs"
             >
               <h2 className="mb-4 text-sm text-neutral-900 dark:text-neutral-400">
                 {work.label}

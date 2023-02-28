@@ -13,7 +13,10 @@ export const getIndex = () => {
 };
 
 export const getPlays = () => {
-  const all = R.groupBy(allPlays, (x) => dayjs(x.date).year());
+  const all = R.groupBy(
+    allPlays.filter((play) => play.featured),
+    (x) => dayjs(x.date).year()
+  );
   return R.sortBy(Object.entries(all), ([year]) => -year);
 };
 
