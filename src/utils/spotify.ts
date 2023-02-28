@@ -1,26 +1,28 @@
 import { env } from "env/server.mjs";
+import { z } from "zod";
 
-type GetNowPlayingResponse = {
-  status: number;
-  is_playing: boolean;
-  item: {
-    name: string;
-    album: {
-      name: string;
-      images: Array<{ url: string }>;
-      artists: Array<{ name: string }>;
-    };
-    external_urls: {
-      spotify: string;
-    };
-  };
-};
+const nowPlayingSchema = z.object({
+  status: z.number(),
+  is_playing: z.boolean(),
+  item: z.object({
+    name: z.string(),
+    album: z.object({
+      artists: z.array(
+        z.object({
+          name: z.string(),
+        })
+      ),
+    }),
+  }),
+});
+
+export type NowPlayingResponse = z.infer<typeof nowPlayingSchema>;
 
 const basic = Buffer.from(
   `${env.SPOTIFY_CLIENT_ID}:${env.SPOTIFY_CLIENT_SECRET}`
 ).toString("base64");
 
-export const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const refresh_token = env.SPOTIFY_REFRESH_TOKEN as string;
 
@@ -51,5 +53,5 @@ export const getNowPlaying = async () => {
     },
   });
 
-  return (await res.json()) as GetNowPlayingResponse;
+  return (await res.json()) as NowPlayingResponse;
 };

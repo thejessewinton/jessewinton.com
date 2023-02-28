@@ -7,15 +7,17 @@ import type { ReactNode } from "react";
 import "styles/globals.css";
 
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "optional",
   subsets: ["latin"],
 });
+
 const newsreader = Newsreader({
-  variable: "--font-newsreader",
+  variable: "--font-serif",
   display: "optional",
   style: "italic",
   subsets: ["latin"],
+  weight: ["300"],
 });
 
 export const metadata: Metadata = {
