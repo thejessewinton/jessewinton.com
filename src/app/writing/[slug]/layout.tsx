@@ -5,7 +5,7 @@ import { Arrow } from "components/icons/Icons";
 const WritingLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <div className="w-full">
-      <Link href="/writing" className="flex items-center gap-2 font-serif">
+      <Link href="/writing" className="mb-8 flex items-center gap-2 font-serif">
         <Arrow className="-rotate-90" />
         Writing
       </Link>
