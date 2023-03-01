@@ -35,7 +35,7 @@ export const generateMetadata = async ({
 
 export const generateStaticParams = async () => {
   return allWritings.map((post) => ({
-    slug: post.slug,
+    slug: post.slugAsParams,
   }));
 };
 
@@ -51,7 +51,7 @@ const Writing = ({ params }: PlaysParams) => {
         </span>
 
         <div
-          className="mt-10 dark:prose-invert"
+          className="mt-10"
           dangerouslySetInnerHTML={{
             __html: post.body.html,
           }}
