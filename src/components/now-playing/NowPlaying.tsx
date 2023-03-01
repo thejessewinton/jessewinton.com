@@ -1,8 +1,5 @@
+import Link from "next/link";
 import { getNowPlaying } from "utils/spotify";
-
-const loader = async () => {
-  return await getNowPlaying();
-};
 
 const SpotifyIcon = () => {
   return (
@@ -24,11 +21,16 @@ const SpotifyIcon = () => {
 };
 
 export const NowPlaying = async () => {
-  const data = await loader();
+  const data = await getNowPlaying();
   return (
-    <div className="flex items-center gap-2 text-sm">
-      <SpotifyIcon />
-      <span>{data.item.album.artists[0]?.name}</span>
-    </div>
+    <Link
+      href={data.item.album.artists[0]?.external_urls.spotify || ""}
+      target="_blank"
+    >
+      <div className="flex items-center gap-2 text-sm">
+        <SpotifyIcon />
+        <span>{data.item.album.artists[0]?.name}</span>
+      </div>
+    </Link>
   );
 };
