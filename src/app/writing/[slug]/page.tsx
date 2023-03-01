@@ -1,3 +1,4 @@
+import { allWritings } from "content";
 import dayjs from "dayjs";
 import type { Metadata } from "next";
 import { getWriting } from "utils/content";
@@ -10,7 +11,32 @@ export const generateMetadata = async ({
   params,
 }: PlaysParams): Promise<Metadata> => {
   const post = getWriting({ slug: params.slug });
-  return { title: post.title, description: post.summary };
+  return {
+    title: post.title,
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      url: `https://jessewinton.com/writing/${post.slug}`,
+      description: post.summary,
+      type: "article",
+      images: [
+        {
+          url: "https://jessewinton.com/images/og.jpg",
+        },
+      ],
+    },
+    twitter: {
+      title: post.title,
+      description: post.summary,
+      card: "summary",
+    },
+  };
+};
+
+export const generateStaticParams = async () => {
+  return allWritings.map((post) => ({
+    slug: post.slug,
+  }));
 };
 
 const Writing = ({ params }: PlaysParams) => {
@@ -25,7 +51,7 @@ const Writing = ({ params }: PlaysParams) => {
         </span>
 
         <div
-          className="mt-10"
+          className="mt-10 dark:prose-invert"
           dangerouslySetInnerHTML={{
             __html: post.body.html,
           }}

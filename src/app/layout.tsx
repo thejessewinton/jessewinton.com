@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import "styles/globals.css";
-import { Blur } from "components/blur/Blur";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Jesse Winton",
-    card: "summary_large_image",
+    card: "summary",
   },
   openGraph: {
     type: "website",
@@ -37,7 +36,11 @@ export const metadata: Metadata = {
     title: "Jesse Winton",
     description:
       "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
-    images: ["https://jessewinton.com/images/og.jpg"],
+    images: [
+      {
+        url: "https://jessewinton.com/images/og.jpg",
+      },
+    ],
   },
   robots: {
     index: true,
