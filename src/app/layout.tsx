@@ -6,13 +6,13 @@ import type { ReactNode } from "react";
 
 import "styles/globals.css";
 
-const inter = Inter({
+const sans = Inter({
   variable: "--font-sans",
   display: "optional",
   subsets: ["latin"],
 });
 
-const newsreader = Newsreader({
+const serif = Newsreader({
   variable: "--font-serif",
   display: "optional",
   style: "italic",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable}`}>
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <link href="/favicon.ico" rel="shortcut icon" />
       <body className="flex min-h-screen flex-col items-center justify-center scroll-smooth leading-loose text-neutral-900 antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
         <main className="mx-auto mt-32 flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-8">
