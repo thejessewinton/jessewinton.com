@@ -1,5 +1,5 @@
-import type { ComputedFields } from "contentlayer/source-files";
 import {
+  type ComputedFields,
   defineDocumentType,
   defineNestedType,
   makeSource,

@@ -1,3 +1,4 @@
+import { NowPlaying } from "components/now-playing/NowPlaying";
 import Link from "next/link";
 
 const socials = [
@@ -26,6 +27,7 @@ export const Footer = () => {
             </Link>
           ))}
         </nav>
+
         <span className="text-sm">{new Date().getFullYear()}</span>
       </div>
     </footer>

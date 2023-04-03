@@ -10,9 +10,11 @@ const nowPlayingSchema = z.object({
       artists: z.array(
         z.object({
           name: z.string(),
+          external_urls: z.object({
+            spotify: z.string(),
+          }),
         })
       ),
-      href: z.string().url(),
     }),
   }),
 });
