@@ -27,7 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "Jesse Winton",
-    card: "summary",
+    description: "Actor, playwright, and award-winning musician living and working in New York, NY.".
+    card: "summary_large_image",
+    images: "https://jessewinton.com/images/og.jpg"
   },
   openGraph: {
     type: "website",
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
     url: "https://jessewinton.com",
     title: "Jesse Winton",
     description:
-      "Actor, playwright, and award-winning musician living and working outside Boston, MA.",
+      "Actor, playwright, and award-winning musician living and working in New York, NY.",
     images: [
       {
         url: "https://jessewinton.com/images/og.jpg",
