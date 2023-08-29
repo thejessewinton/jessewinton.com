@@ -4,10 +4,10 @@ import { Arrow } from 'components/icons'
 
 const WritingLayout = async ({ children }: { children: ReactNode }) => {
   return (
-    <div className='w-full'>
-      <Link href='/writing' className='mb-8 flex items-center gap-2 font-serif italic'>
+    <div className='w-full animate-enter'>
+      <Link href='/' className='mb-8 flex items-center gap-2 font-serif italic'>
         <Arrow className='-rotate-90' />
-        Writings
+        Index
       </Link>
 
       {children}

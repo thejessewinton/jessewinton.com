@@ -10,35 +10,35 @@
     "clean": "rm -rf .next node_modules .contentlayer"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.6.0",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@t3-oss/env-nextjs": "^0.6.1",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
     "@vercel/analytics": "^1.0.2",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.9",
-    "next": "^13.4.13",
+    "next": "^13.4.19",
     "next-contentlayer": "^0.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "remeda": "^1.24.0",
-    "sharp": "^0.32.4",
+    "remeda": "^1.25.2",
+    "sharp": "^0.32.5",
     "tailwind-gradient-mask-image": "^1.0.0",
     "tailwind-merge": "^1.14.0",
-    "zod": "^3.21.4"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "20.4.9",
-    "@types/react": "18.2.20",
+    "@types/node": "20.5.7",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.47.0",
-    "eslint-config-next": "13.4.13",
-    "postcss": "^8.4.27",
-    "prettier": "^3.0.1",
-    "prettier-plugin-tailwindcss": "^0.5.2",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.48.0",
+    "eslint-config-next": "13.4.19",
+    "postcss": "^8.4.28",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.3",
     "tailwindcss": "^3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   }
 }

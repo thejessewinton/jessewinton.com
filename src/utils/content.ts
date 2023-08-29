@@ -1,29 +1,29 @@
-import { allIndices, allPlays, allWritings, type Index, type Writing } from 'content'
+import { allPlays, allWritings, index, type Writing } from 'content'
 import dayjs from 'dayjs'
-import * as R from 'remeda'
+import { groupBy, sortBy } from 'remeda'
 
 export const getIndex = () => {
-  return allIndices.find((doc) => doc.slug === '/') as Index
+  return index
 }
 
-export const getPlays = () => {
-  const all = R.groupBy(
+export const getAllPlays = () => {
+  const all = groupBy(
     allPlays.filter((play) => play.featured),
     (x) => dayjs(x.date).year()
   )
-  return R.sortBy(Object.entries(all), ([year]) => -year)
+  return sortBy(Object.entries(all), ([year]) => -year)
 }
 
 export const getAllWritings = () => {
-  const all = R.groupBy(allWritings, (x) => dayjs(x.date).year())
-  const byYear = R.sortBy(Object.entries(all), ([year]) => -year)
+  const all = groupBy(allWritings, (x) => dayjs(x.date).year())
+  const byYear = sortBy(Object.entries(all), ([year]) => -year)
 
   return byYear.map(([year, writings]) => ({
     year,
-    posts: R.sortBy(writings, (x) => -dayjs(x.date).unix())
+    posts: sortBy(writings, (x) => -dayjs(x.date).unix())
   }))
 }
 
-export const getWriting = ({ slug }: { slug: string }) => {
+export const getWritingBySlug = ({ slug }: { slug: string }) => {
   return allWritings.find((doc) => doc.slugAsParams === slug) as Writing
 }

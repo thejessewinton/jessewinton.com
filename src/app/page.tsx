@@ -1,36 +1,32 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { getIndex } from 'utils/content'
+import { index } from 'content'
 import { Intro } from 'components/intro'
 
 export const generateMetadata = (): Metadata => {
-  const data = getIndex()
-
   return {
-    title: data.title,
-    description: data.description
+    title: index.title,
+    description: index.description
   }
 }
 
 const Index = async () => {
-  const data = getIndex()
-
   return (
     <div className='flex flex-col gap-2 pb-4'>
       <div className='relative z-50 animate-enter'>
         <h1 className='group relative mb-4 inline-block w-full max-w-xs cursor-pointer font-medium'>
           <>
-            {data.title}
+            {index.title}
             <Intro />
           </>
         </h1>
 
-        <div className='font-light' dangerouslySetInnerHTML={{ __html: data.body.html }} />
+        <div className='font-light' dangerouslySetInnerHTML={{ __html: index.body.html }} />
       </div>
 
-      {data.works ? (
+      {index.works ? (
         <div className='group pointer-events-none relative mb-12 mt-8 grid animate-enter gap-12 animation-delay-300 sm:grid-cols-3'>
-          {data.works.map((work) => (
+          {index.works.map((work) => (
             <Link
               key={work.label}
               href={work.url || ''}
