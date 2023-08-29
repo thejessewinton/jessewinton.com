@@ -8,7 +8,7 @@ works:
     description: 'Get a glimpse of my previous work.'
     url: '/docs/resume.pdf'
   - label: 'Now'
-    title: 'Musings'
+    title: 'Journals'
     description: "Random thoughts I've written down."
     url: '/writing/distractions'
   - label: 'Now'
