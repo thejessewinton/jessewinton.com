@@ -1,6 +1,6 @@
 import { Inter, Newsreader } from 'next/font/google'
-import { AnalyticsWrapper } from 'components/analytics-wrapper/AnalyticsWrapper'
-import { Footer } from 'components/footer/Footer'
+import { AnalyticsWrapper } from 'components/analytics-wrapper'
+import { Footer } from 'components/footer'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
