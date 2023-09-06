@@ -15,6 +15,7 @@ export const env = createEnv({
     SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
     SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
     SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NODE_ENV: process.env.NODE_ENV
   }
 })
