@@ -36,7 +36,7 @@ const config: Config = {
         },
         'animate-scale': {
           '0%': {
-            transform: `scale(105)`
+            transform: `scale(1.05)`
           },
           '100%': {
             transform: 'translateY(0px)'
