@@ -17,7 +17,7 @@ const config: Config = {
       blur: {
         xs: '2px'
       },
-      keyframes: (theme) => ({
+      keyframes: {
         'animate-blur': {
           '0%': {
             filter: 'blur(5px)'
@@ -28,7 +28,7 @@ const config: Config = {
         },
         'animate-up': {
           '0%': {
-            transform: `translateY(${theme('spacing.4')})`
+            transform: `translateY(16px)`
           },
           '100%': {
             transform: 'translateY(0px)'
@@ -36,7 +36,7 @@ const config: Config = {
         },
         'animate-scale': {
           '0%': {
-            transform: `scale(${theme('scale.105')})`
+            transform: `scale(105)`
           },
           '100%': {
             transform: 'translateY(0px)'
@@ -44,13 +44,13 @@ const config: Config = {
         },
         'animate-opacity': {
           '0%': {
-            opacity: 0
+            opacity: '0'
           },
           '100%': {
-            opacity: 1
+            opacity: '1'
           }
         }
-      }),
+      },
       animation: {
         enter:
           'animate-scale 0.75s ease-in-out both, animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both',
