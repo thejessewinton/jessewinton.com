@@ -1,7 +1,7 @@
-import { allWritings } from 'content'
+import { allWritings } from '~/content'
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
-import { getWritingBySlug } from 'utils/content'
+import { getWritingBySlug } from '~/utils/content'
 
 interface PlaysParams {
   params: { slug: string }

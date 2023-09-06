@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import { Arrow } from 'components/icons'
+import { Arrow } from '~/components/icons'
 
 const WritingLayout = async ({ children }: { children: ReactNode }) => {
   return (

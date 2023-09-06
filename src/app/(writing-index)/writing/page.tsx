@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllWritings } from 'utils/content'
+import { getAllWritings } from '~/utils/content'
 
 export const metadata: Metadata = {
   title: 'Writing'

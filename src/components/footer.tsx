@@ -4,14 +4,6 @@ const socials = [
   {
     label: 'Instagram',
     href: 'https://instagram.com/thejessewinton'
-  },
-  {
-    label: 'Twitter',
-    href: 'https://twitter.com/thejessewinton'
-  },
-  {
-    label: 'YouTube',
-    href: 'https://www.youtube.com/@thejessewinton'
   }
 ]
 

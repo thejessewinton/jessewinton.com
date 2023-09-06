@@ -1,5 +1,6 @@
-import { classNames } from 'utils/classnames'
-const classes = 'h-4 w-4 text-neutral-400'
+import { classNames } from '~/utils/classnames'
+
+const defaultClasses = 'h-4 w-4 text-neutral-400'
 
 export const Arrow = ({ className }: { className?: string }) => {
   return (
@@ -9,7 +10,7 @@ export const Arrow = ({ className }: { className?: string }) => {
       viewBox='0 0 24 24'
       strokeWidth={1.5}
       stroke='currentColor'
-      className={classNames(classes, className)}
+      className={classNames(defaultClasses, className)}
     >
       <path strokeLinecap='round' strokeLinejoin='round' d='M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25' />
     </svg>
@@ -24,7 +25,7 @@ export const Document = () => {
       viewBox='0 0 24 24'
       strokeWidth={1.5}
       stroke='currentColor'
-      className={classes}
+      className={defaultClasses}
     >
       <path
         strokeLinecap='round'

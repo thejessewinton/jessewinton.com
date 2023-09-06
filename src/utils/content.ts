@@ -1,4 +1,4 @@
-import { allPlays, allWritings, index, type Writing } from 'content'
+import { allPlays, allWritings, index, type Writing } from '~/content'
 import dayjs from 'dayjs'
 import { groupBy, sortBy } from 'remeda'
 

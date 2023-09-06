@@ -8,7 +8,9 @@ export const env = createEnv({
     SPOTIFY_CLIENT_ID: z.string(),
     NODE_ENV: z.enum(['development', 'test', 'production'])
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_APP_URL: z.string().url()
+  },
   runtimeEnv: {
     SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
     SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,

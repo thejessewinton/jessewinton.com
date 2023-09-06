@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getNowPlaying } from 'utils/spotify'
+import { getNowPlaying } from '~/utils/spotify'
 
 const SpotifyIcon = () => {
   return (

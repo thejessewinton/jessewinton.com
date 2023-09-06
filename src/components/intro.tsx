@@ -1,14 +1,14 @@
 'use client'
 
-import { useMousePosition } from 'hooks/use-mouse-position'
+import { useMousePosition } from '~/hooks/use-mouse-position'
 import Image from 'next/image'
-import Headshot from '../../public/images/headshot.webp'
+import Headshot from '~/public/images/headshot.webp'
 
 export const Intro = () => {
   const position = useMousePosition()
 
   return (
-    <span>
+    <div className='inline'>
       <Image
         src={Headshot}
         alt={''}
@@ -18,6 +18,6 @@ export const Intro = () => {
         }}
         placeholder='blur'
       />
-    </span>
+    </div>
   )
 }
