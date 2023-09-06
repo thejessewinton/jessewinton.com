@@ -1,5 +1,6 @@
-import { env } from 'env.mjs'
+
 import { z } from 'zod'
+import { env } from '~/env.mjs'
 
 const nowPlayingSchema = z.object({
   status: z.number(),
