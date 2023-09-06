@@ -9,16 +9,16 @@ import { env } from '~/env.mjs'
 
 const sans = Inter({
   variable: '--font-sans',
-  display: 'optional',
+  display: 'swap',
   subsets: ['latin']
 })
 
 const serif = Newsreader({
   variable: '--font-serif',
-  display: 'optional',
+  display: 'swap',
   style: 'italic',
   subsets: ['latin'],
-  weight: ['400']
+  weight: ['400'],
 })
 
 export const metadata: Metadata = {
