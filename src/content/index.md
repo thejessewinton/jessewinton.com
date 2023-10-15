@@ -13,7 +13,7 @@ works:
     url: '/writing'
   - label: 'Now'
     title: 'TBD'
-    description: 'Focused on writing.'
+    description: 'Feel free to reach out.'
     url: ''
 ---
 

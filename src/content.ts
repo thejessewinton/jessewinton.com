@@ -1,10 +1,6 @@
-import { allPlays, allWritings, index, type Writing } from '~/content'
+import { allPlays, allWritings, type Writing } from '~/contentlayer'
 import dayjs from 'dayjs'
 import { groupBy, sortBy } from 'remeda'
-
-export const getIndex = () => {
-  return index
-}
 
 export const getAllPlays = () => {
   const all = groupBy(

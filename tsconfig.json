@@ -8,7 +8,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "~/content": ["./.contentlayer/generated"],
+      "~/contentlayer": ["./.contentlayer/generated"],
       "~/public/*": ["./public/*"]
     },
     "forceConsistentCasingInFileNames": true,

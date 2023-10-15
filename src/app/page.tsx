@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { index } from '~/content'
+import { index } from '~/contentlayer'
 import { Intro } from '~/components/intro'
 
 export const generateMetadata = (): Metadata => {
