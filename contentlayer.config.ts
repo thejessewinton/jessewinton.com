@@ -3,10 +3,6 @@ import { type ComputedFields, defineDocumentType, defineNestedType, makeSource }
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`
-  },
-  slugAsParams: {
-    type: 'string',
     resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/')
   }
 }

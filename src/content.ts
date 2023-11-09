@@ -21,5 +21,5 @@ export const getAllWritings = () => {
 }
 
 export const getWritingBySlug = ({ slug }: { slug: string }) => {
-  return allWritings.find((doc) => doc.slugAsParams === slug) as Writing
+  return allWritings.find((doc) => doc.slug === slug) as Writing
 }

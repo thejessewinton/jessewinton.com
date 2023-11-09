@@ -33,7 +33,7 @@ export const generateMetadata = async ({ params }: PlaysParams): Promise<Metadat
 
 export const generateStaticParams = async () => {
   return allWritings.map((post) => ({
-    slug: post.slugAsParams
+    slug: post.slug
   }))
 }
 
