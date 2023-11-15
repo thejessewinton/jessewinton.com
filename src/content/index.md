@@ -11,7 +11,7 @@ works:
     title: 'Writing'
     description: 'Upcoming productions TBA.'
     url: '#'
-  - label: 'Now'
+  - label: 'Future'
     title: 'TBD'
     description: 'Feel free to reach out with opportunities.'
     url: ''
