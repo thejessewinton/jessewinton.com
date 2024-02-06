@@ -1,9 +1,8 @@
-
 import { z } from 'zod'
 import { env } from '~/env.mjs'
 
 const nowPlayingSchema = z.object({
-  status: z.number(),
+
   is_playing: z.boolean(),
   item: z.object({
     name: z.string(),
@@ -49,11 +48,19 @@ export const getAccessToken = async () => {
 export const getNowPlaying = async () => {
   const { access_token } = await getAccessToken()
 
-  const res = await fetch(NOW_PLAYING_ENDPOINT, {
+  const response = await fetch(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`
+    },
+    next: {
+      revalidate: 180
     }
   })
 
-  return (await res.json()) as NowPlayingResponse
+
+  if (response.status === 204) {
+    return null
+  }
+
+  return nowPlayingSchema.parseAsync(await response.json())
 }

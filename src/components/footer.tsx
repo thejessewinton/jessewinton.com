@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { NowPlaying } from './now-playing'
 
 const socials = [
   {
@@ -17,9 +18,13 @@ export const Footer = () => {
               {social.label}
             </Link>
           ))}
+           <NowPlaying />
         </nav>
 
-        <span className='text-sm'>{new Date().getFullYear()}</span>
+        <div className='flex items-center gap-2'>
+        
+          <span className='text-sm'>{new Date().getFullYear()}</span>
+        </div>
       </div>
     </footer>
   )
