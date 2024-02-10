@@ -27,7 +27,7 @@ export default function Plays() {
             <div className='flex gap-32' key={year}>
               <span className='pointer-events-none pt-3 text-sm text-neutral-500'>{year}</span>
 
-              <div className='group flex-1 divide-y divide-neutral-700 py-2'>
+              <div className='group flex-1 divide-y divide-neutral-700'>
                 {plays.map((play) => (
                   <Link
                     href={play.url ?? ''}
