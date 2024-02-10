@@ -42,26 +42,18 @@ const Index = defineDocumentType(() => ({
   computedFields
 }))
 
-const Writing = defineDocumentType(() => ({
-  name: 'Writing',
-  filePathPattern: 'writing/**/*.md',
+const PlaysIndex = defineDocumentType(() => ({
+  name: 'PlaysIndex',
+  filePathPattern: 'plays.md',
+  isSingleton: true,
   contentType: 'markdown',
   fields: {
     title: {
       type: 'string',
       required: true
     },
-    summary: {
-      type: 'string',
-      required: true
-    },
-    date: {
-      type: 'string',
-      required: true
-    },
-    featured: {
-      type: 'boolean',
-      required: false
+    description: {
+      type: 'string'
     }
   },
   computedFields
@@ -76,27 +68,26 @@ const Plays = defineDocumentType(() => ({
       type: 'string',
       required: true
     },
-    synopsis: {
-      type: 'string',
-      required: true
-    },
     date: {
       type: 'string',
       required: true
     },
-    featured: {
-      type: 'boolean',
-      required: false
+    synopsis: {
+      type: 'string',
+      required: true
     },
-    sample: {
+    url: {
       type: 'string',
       required: false
+    },
+    completed: {
+      type: 'boolean',
+      required: false
     }
-  },
-  computedFields
+  }
 }))
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Index, Writing, Plays]
+  documentTypes: [Index, PlaysIndex, Plays]
 })

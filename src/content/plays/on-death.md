@@ -1,6 +1,6 @@
 ---
-title: "On Death"
-synopsis: "A short dialog on the nature of life and death."
-date: "2022"
-featured: true
+title: 'On Death'
+date: '2023'
+url: '/docs/samples/on-death-sample.pdf'
+synopsis: 'A short dialog on the nature of life and death.'
 ---

@@ -55,7 +55,9 @@ const config: Config = {
         enter:
           'animate-scale 0.75s ease-in-out both, animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both',
         up: 'animate-up 0.75s ease-in-out both',
-        blur: 'animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both'
+        blur: 'animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both',
+        fade: 'animate-opacity 0.25s ease-in-out both',
+        'fade-blur': 'animate-blur 0.25s ease-in-out both, animate-opacity 0.25s ease-in-out both'
       }
     }
   },
@@ -74,7 +76,6 @@ const config: Config = {
         }
       )
     }),
-    require('tailwind-gradient-mask-image'),
     require('@tailwindcss/typography')
   ]
 }

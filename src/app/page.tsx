@@ -10,7 +10,7 @@ export const generateMetadata = (): Metadata => {
   }
 }
 
-const Index = async () => {
+export default function Index() {
   return (
     <div className='flex flex-col gap-2 pb-4'>
       <div className='relative z-50 animate-enter'>
@@ -31,7 +31,7 @@ const Index = async () => {
               key={work.label}
               href={work.url || ''}
               target={work.url?.startsWith('http') ? '_blank' : '_self'}
-              className='pointer-events-auto relative min-h-[90px] font-light transition-all hover:!opacity-100 hover:!blur-none group-hover:opacity-40 group-hover:blur-xs'
+              className='pointer-events-auto relative min-h-[90px] font-light transition-all hover:md:!opacity-100 hover:md:!blur-none group-hover:md:opacity-40 group-hover:md:blur-xs'
             >
               <h2 className='mb-4 text-sm text-neutral-900 dark:text-neutral-400'>{work.label}</h2>
               <div className='gap-6'>
@@ -45,5 +45,3 @@ const Index = async () => {
     </div>
   )
 }
-
-export default Index
