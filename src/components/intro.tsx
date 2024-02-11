@@ -8,11 +8,11 @@ export const Intro = () => {
   const position = useMousePosition()
 
   return (
-    <div className='inline'>
+    <div className='hidden md:inline'>
       <Image
         src={Headshot}
         alt={''}
-        className='absolute right-0 hidden shadow-xl group-hover:block animate-fade-blur'
+        className='absolute right-0 hidden animate-fade-blur shadow-xl group-hover:block'
         style={{
           transform: position.x && position.y ? `translate(${position.x / 3}px, ${position.y / 8}px)` : undefined
         }}
