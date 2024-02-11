@@ -1,5 +1,5 @@
 ---
 title: 'Break Apart'
 date: '2024'
-synopsis: 'Relationships are explored through a deterioration.'
+synopsis: "Exploring love in the midst of it's deterioration."
 ---
