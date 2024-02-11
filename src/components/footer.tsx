@@ -5,6 +5,10 @@ const socials = [
   {
     label: 'Instagram',
     href: 'https://instagram.com/thejessewinton'
+  },
+  {
+    label: 'Email',
+    href: 'mailto:hi@jessewinton.com'
   }
 ]
 
