@@ -21,13 +21,13 @@ export default function Plays() {
           }}
         />
       </div>
-      <div className='group mt-8 flex w-full animate-enter flex-col divide-y divide-neutral-800 border-t border-neutral-800'>
+      <div className='group mt-8 flex w-full animate-enter flex-col divide-y divide-neutral-300 border-t border-neutral-300 dark:divide-neutral-800 dark:border-neutral-800'>
         {allPlays.map(([year, plays]) => {
           return (
             <div className='flex gap-20 py-4 md:p-0' key={year}>
               <span className='pointer-events-none pt-3 text-sm text-neutral-500'>{year}</span>
 
-              <div className='group flex-1 divide-y divide-neutral-700'>
+              <div className='group flex-1 divide-y divide-neutral-300 dark:divide-neutral-700'>
                 {plays.map((play) => (
                   <Link
                     href={play.url ?? ''}
