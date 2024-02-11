@@ -9,7 +9,7 @@ works:
     url: '/docs/resume.pdf'
   - label: 'Now'
     title: 'Plays'
-    description: 'A curated selection of my work.'
+    description: 'A curated selection of my writing.'
     url: '/plays'
   - label: 'Future'
     title: 'TBD'
