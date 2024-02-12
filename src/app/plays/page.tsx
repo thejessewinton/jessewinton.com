@@ -27,7 +27,7 @@ export default function Plays() {
             <div className='relative top-0 flex gap-20 py-4 md:p-0' key={year}>
               <span className='absolute -z-20 pt-3 text-sm text-neutral-500'>{year}</span>
 
-              <div className='ml-[25%] flex-1 divide-y divide-neutral-300 dark:divide-neutral-700'>
+              <div className='ml-[25%] flex-1 divide-y divide-neutral-300 dark:divide-neutral-800'>
                 {plays.map((play) => (
                   <Link
                     href={play.url ?? ''}

@@ -17,6 +17,8 @@ works:
     url: ''
 ---
 
-Actor, _playwright_, and award-winning musician living and working in _New York, NY_. Leftist– deeply invested in theatre as a medium for social change.
+Actor, _playwright_, and award-winning musician living and working in _New York, NY_. Leftist– deeply invested in theatre as a medium for social introspection.
+
+<!-- Proud member of _[Actor's Equity Association](https://actorsequity.org)_ and _[Dramatist's Guild](https://dramatistsguild.com)_. -->
 
 Find me on Instagram _[@thejessewinton](https://instagram.com/thejessewinton)_, or email me at _[hi@jessewinton.com](mailto:hi@jessewinton.com)_.
