@@ -18,7 +18,7 @@ const serif = Newsreader({
   display: 'swap',
   style: 'italic',
   subsets: ['latin'],
-  weight: ['400']
+  weight: ['300']
 })
 
 export const metadata: Metadata = {
