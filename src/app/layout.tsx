@@ -52,8 +52,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL)
 }
 
-export const revalidate = 60
-
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <html lang='en' className={`${sans.variable} ${serif.variable}`}>
