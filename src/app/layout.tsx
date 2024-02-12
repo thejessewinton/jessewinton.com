@@ -1,5 +1,5 @@
 import { Inter, Newsreader } from 'next/font/google'
-import { AnalyticsWrapper } from '~/components/analytics-wrapper'
+import { Analytics, SpeedInsights } from '~/components/analytics'
 import { Footer } from '~/components/footer'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
@@ -63,7 +63,8 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
           {children}
         </main>
         <Footer />
-        <AnalyticsWrapper />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
