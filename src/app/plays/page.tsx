@@ -21,18 +21,18 @@ export default function Plays() {
           }}
         />
       </div>
-      <div className='group mt-8 flex w-full animate-enter flex-col divide-y divide-neutral-300 border-t border-neutral-300 dark:divide-neutral-800 dark:border-neutral-800'>
+      <div className='group relative mt-8 flex w-full animate-enter flex-col divide-y divide-neutral-300 overflow-hidden border-t border-neutral-300 dark:divide-neutral-800 dark:border-neutral-800'>
         {allPlays.map(([year, plays]) => {
           return (
-            <div className='flex gap-20 py-4 md:p-0' key={year}>
-              <span className='pointer-events-none pt-3 text-sm text-neutral-500'>{year}</span>
+            <div className='relative top-0 flex gap-20 py-4 md:p-0' key={year}>
+              <span className='absolute -z-20 pt-3 text-sm text-neutral-500'>{year}</span>
 
-              <div className='group flex-1 divide-y divide-neutral-300 dark:divide-neutral-700'>
+              <div className='ml-[25%] flex-1 divide-y divide-neutral-300 dark:divide-neutral-700'>
                 {plays.map((play) => (
                   <Link
                     href={play.url ?? ''}
                     key={play.title}
-                    className='flex-1 items-center justify-between py-2 transition-all md:flex hover:md:!opacity-100 hover:md:!blur-none group-hover:md:opacity-40 group-hover:md:blur-xs'
+                    className='flex-1 items-center justify-between py-2 transition-all before:absolute before:-left-1/2 before:h-full before:w-full before:content-[""] md:flex hover:md:!opacity-100 hover:md:!blur-none group-hover:md:opacity-40 group-hover:md:blur-xs'
                   >
                     {play.title}
                     <div className='text-sm text-neutral-500'>{play.synopsis}</div>
