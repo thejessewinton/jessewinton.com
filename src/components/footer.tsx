@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { NowPlaying } from './now-playing'
 
 const socials = [
   {
@@ -22,7 +21,6 @@ export const Footer = () => {
               {social.label}
             </Link>
           ))}
-          <NowPlaying />
         </nav>
 
         <div className='flex items-center gap-2'>
