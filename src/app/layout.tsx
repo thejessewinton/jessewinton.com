@@ -3,9 +3,9 @@ import { AnalyticsWrapper } from '~/components/analytics-wrapper'
 import { Footer } from '~/components/footer'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { env } from '~/env.mjs'
 
 import '~/styles/globals.css'
-import { env } from '~/env.mjs'
 
 const sans = Inter({
   variable: '--font-sans',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL)
 }
 
-export const revalidate = 180
+export const revalidate = 60
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (

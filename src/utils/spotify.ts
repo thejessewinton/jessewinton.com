@@ -1,8 +1,7 @@
 import { z } from 'zod'
 import { env } from '~/env.mjs'
 
-const nowPlayingSchema = z.object({
-
+const NowPlayingSchema = z.object({
   is_playing: z.boolean(),
   item: z.object({
     name: z.string(),
@@ -19,7 +18,7 @@ const nowPlayingSchema = z.object({
   })
 })
 
-export type NowPlayingResponse = z.infer<typeof nowPlayingSchema>
+export type NowPlayingResponse = z.infer<typeof NowPlayingSchema>
 
 const basic = Buffer.from(`${env.SPOTIFY_CLIENT_ID}:${env.SPOTIFY_CLIENT_SECRET}`).toString('base64')
 
@@ -57,10 +56,9 @@ export const getNowPlaying = async () => {
     }
   })
 
-
   if (response.status === 204) {
     return null
   }
 
-  return nowPlayingSchema.parseAsync(await response.json())
+  return NowPlayingSchema.parseAsync(await response.json())
 }
