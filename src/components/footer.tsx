@@ -8,10 +8,6 @@ const socials = [
   {
     label: 'Email',
     href: 'mailto:hi@jessewinton.com'
-  },
-  {
-    label: 'New Play Exchange',
-    href: 'https://newplayexchange.org/users/87198/jesse-winton'
   }
 ]
 
