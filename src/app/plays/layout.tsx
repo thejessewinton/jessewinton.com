@@ -6,7 +6,7 @@ export default function WritingLayout({ children }: { children: ReactNode }) {
   return (
     <div className='w-full animate-enter'>
       <Link href='/' className='group -mt-16 mb-8 inline-flex items-center gap-2 font-serif italic'>
-        <Arrow className='-rotate-90 transition-all group-hover:-translate-x-0.5 group-hover:-translate-y-0.5' />
+        <Arrow className='-mt-1 h-3 w-3' />
         Index
       </Link>
 
