@@ -14,7 +14,7 @@ works:
   - label: 'Upcoming'
     title: 'Figuring It Out As We Go'
     description: 'Debuting July 16, 2024 at The Tank.'
-    url: '/plays/figuring-it-out-as-we-go'
+    url: '/figuring-it-out-as-we-go'
 ---
 
 Actor, _playwright_, and award-winning musician living and working in _New York, NY_. Leftist– deeply invested in theatre as a medium for social change. Proud member of _The Dramatist's Guild of America_ and _Actor's Equity Association_.
