@@ -12,7 +12,7 @@ export const Intro = () => {
   return (
     <>
       <span
-        className='mb-2 block animate-blur font-mono text-xs tracking-tight text-neutral-500'
+        className='mb-2 block animate-blur text-xs text-neutral-500'
         style={{
           animationDelay: `${delay * 2}ms`
         }}
@@ -20,7 +20,7 @@ export const Intro = () => {
         <Balancer>{eyebrow}</Balancer>
       </span>
       <h1 className='sr-only'>{heading}</h1>
-      <h1 className='mb-4 text-6xl font-medium'>
+      <h1 className='mb-4 text-6xl font-medium text-neutral-900 dark:text-white'>
         <Balancer>
           {heading.split(' ').map((word, i) => {
             return (
@@ -43,7 +43,7 @@ export const Intro = () => {
             return (
               <span
                 key={word}
-                className='mr-1 inline-block animate-text text-neutral-400'
+                className='mr-1 inline-block animate-text text-neutral-900 dark:text-neutral-400'
                 style={{
                   animationDelay: `${i * 100}ms`
                 }}

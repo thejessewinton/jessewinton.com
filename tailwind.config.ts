@@ -12,8 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
-        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono]
+        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif]
       },
       blur: {
         xs: '2px'
