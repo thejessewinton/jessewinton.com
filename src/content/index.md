@@ -8,7 +8,7 @@ works:
     url: '/docs/resume.pdf'
   - label: 'Now'
     title: 'Plays'
-description: 'Selected samples of my writing.'
+    description: 'Selected samples of my writing.'
     url: '/plays'
   - label: 'Upcoming'
     title: 'Figuring It Out As We Go'
