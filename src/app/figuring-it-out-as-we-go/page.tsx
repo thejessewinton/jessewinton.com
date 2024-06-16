@@ -1,4 +1,10 @@
+import { Metadata } from 'next'
 import { Intro } from '~/components/figuring-it-out-as-we-go/intro'
+
+export const metadata: Metadata = {
+  title: 'Figuring It Out As We Go',
+  description: 'July 16, 2024 @ Darkfest, The Tank NYC'
+}
 
 export default function FiguringItOutAsWeGo() {
   return (
