@@ -12,7 +12,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif]
+        serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
+        mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono]
       },
       blur: {
         xs: '2px'
@@ -28,7 +29,7 @@ const config: Config = {
         },
         'animate-up': {
           '0%': {
-            transform: `translateY(16px)`
+            transform: `translateY(8px)`
           },
           '100%': {
             transform: 'translateY(0px)'
@@ -57,7 +58,8 @@ const config: Config = {
         up: 'animate-up 0.75s ease-in-out both',
         blur: 'animate-blur 0.75s ease-in-out both, animate-opacity 0.75s ease-in-out both',
         fade: 'animate-opacity 0.25s ease-in-out both',
-        'fade-blur': 'animate-blur 0.25s ease-in-out both, animate-opacity 0.25s ease-in-out both'
+        'fade-blur': 'animate-blur 0.25s ease-in-out both, animate-opacity 0.25s ease-in-out both',
+        text: 'animate-opacity 0.75s ease-in-out both, animate-blur 0.75s ease-in-out both, animate-up 0.75s ease-in-out both'
       }
     }
   },

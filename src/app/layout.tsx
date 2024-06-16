@@ -1,4 +1,4 @@
-import { Inter, Newsreader } from 'next/font/google'
+import { Inter, JetBrains_Mono, Newsreader } from 'next/font/google'
 import { Analytics, SpeedInsights } from '~/components/analytics'
 import { Footer } from '~/components/footer'
 import type { Metadata } from 'next'
@@ -9,6 +9,12 @@ import '~/styles/globals.css'
 
 const sans = Inter({
   variable: '--font-sans',
+  display: 'swap',
+  subsets: ['latin']
+})
+
+const mono = JetBrains_Mono({
+  variable: '--font-mono',
   display: 'swap',
   subsets: ['latin']
 })
@@ -54,7 +60,7 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
-    <html lang='en' className={`${sans.variable} ${serif.variable}`}>
+    <html lang='en' className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
       <link href='/favicon.ico' rel='shortcut icon' />
       <body className='flex min-h-screen flex-col items-center justify-center scroll-smooth leading-loose text-neutral-900 antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200'>
         <main className='mx-auto mt-32 flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-8'>
