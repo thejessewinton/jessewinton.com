@@ -1,7 +1,6 @@
 ---
 title: 'Jesse Winton'
 description: 'Actor, playwright, and award-winning musician living and working in NYC.'
-
 works:
   - label: 'Before'
     title: 'Resumé'
@@ -9,7 +8,7 @@ works:
     url: '/docs/resume.pdf'
   - label: 'Now'
     title: 'Plays'
-    description: 'What I'm writing.'
+description: 'Selected samples of my writing.'
     url: '/plays'
   - label: 'Upcoming'
     title: 'Figuring It Out As We Go'
