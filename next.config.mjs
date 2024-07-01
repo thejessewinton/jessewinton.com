@@ -2,13 +2,14 @@ import { withContentlayer } from 'next-contentlayer'
 
 /** @type {import("next").NextConfig} */
 const config = {
-  reactStrictMode: true,
-  webpack: (config) => {
-    config.infrastructureLogging = {
-      level: 'error'
-    }
-
-    return config
+  redirects: async () => {
+    return [
+      {
+        source: '/figuring-it-out-as-we-go',
+        destination: 'https://thetanknyc.org/calendar-1/figuringitoutaswego',
+        permanent: false
+      }
+    ]
   }
 }
 
