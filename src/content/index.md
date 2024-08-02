@@ -12,7 +12,7 @@ works:
     url: '/plays'
   - label: 'Upcoming'
     title: 'Figuring It Out As We Go'
-    description: 'Debuting July 16, 2024 at The Tank.'
+    description: 'Debuted July 16, 2024 at The Tank.'
     url: '/figuring-it-out-as-we-go'
 ---
 
