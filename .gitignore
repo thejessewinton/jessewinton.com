@@ -14,7 +14,7 @@
 
 # production
 /build
-.contentlayer
+.content-collections
 
 # misc
 .DS_Store
