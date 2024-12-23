@@ -7,13 +7,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: env.NEXT_PUBLIC_APP_URL,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 1
+      priority: 1,
     },
     {
       url: `${env.NEXT_PUBLIC_APP_URL}/plays`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8
-    }
+      priority: 0.8,
+    },
   ]
 }

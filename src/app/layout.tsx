@@ -1,8 +1,8 @@
-import { Inter, Newsreader } from 'next/font/google'
-import { Analytics, SpeedInsights } from '~/components/analytics'
-import { Footer } from '~/components/footer'
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
+import { Inter, Newsreader } from 'next/font/google'
 import type { ReactNode } from 'react'
+import { Footer } from '~/components/footer'
 import { env } from '~/env.mjs'
 
 import '~/styles/globals.css'
@@ -10,7 +10,7 @@ import '~/styles/globals.css'
 const sans = Inter({
   variable: '--font-sans',
   display: 'swap',
-  subsets: ['latin']
+  subsets: ['latin'],
 })
 
 const serif = Newsreader({
@@ -18,51 +18,52 @@ const serif = Newsreader({
   display: 'swap',
   style: 'italic',
   subsets: ['latin'],
-  weight: ['300']
+  weight: ['300'],
 })
 
 export const metadata: Metadata = {
   title: {
     default: 'Jesse Winton',
-    template: '%s — Jesse Winton'
+    template: '%s — Jesse Winton',
   },
   twitter: {
     title: 'Jesse Winton',
-    description: 'Actor, playwright, and award-winning musician living and working in New York, NY.',
+    description:
+      'Actor, playwright, and award-winning musician living and working in New York, NY.',
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://jessewinton.com/images/og.jpg'
-      }
-    ]
+        url: 'https://jessewinton.com/images/og.jpg',
+      },
+    ],
   },
   openGraph: {
     title: 'Jesse Winton',
-    description: 'Actor, playwright, and award-winning musician living and working in New York, NY.',
+    description:
+      'Actor, playwright, and award-winning musician living and working in New York, NY.',
     images: [
       {
-        url: 'https://jessewinton.com/images/og.jpg'
-      }
-    ]
+        url: 'https://jessewinton.com/images/og.jpg',
+      },
+    ],
   },
   robots: {
     index: true,
-    follow: true
+    follow: true,
   },
-  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL)
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
 }
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
-    <html lang='en' className={`${sans.variable} ${serif.variable}`}>
-      <link href='/favicon.ico' rel='shortcut icon' />
-      <body className='flex min-h-screen flex-col items-center justify-center scroll-smooth leading-loose text-neutral-900 antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200'>
-        <main className='mx-auto mt-32 flex w-full max-w-3xl grow flex-col items-center justify-center px-8'>
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+      <link href="/favicon.ico" rel="shortcut icon" />
+      <body className="flex min-h-screen flex-col items-center justify-center scroll-smooth text-neutral-900 leading-loose antialiased selection:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+        <main className="mx-auto mt-32 flex w-full max-w-3xl grow flex-col items-center justify-center px-8">
           {children}
         </main>
         <Footer />
         <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   )
