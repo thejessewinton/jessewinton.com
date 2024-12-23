@@ -30,7 +30,7 @@ export const NowPlaying = async () => {
     <Link href={data.item.album.artists[0]?.external_urls.spotify || ''} target='_blank'>
       <div className='flex items-center gap-2 text-sm'>
         <NowPlayingIcon />{' '}
-        <span className='block max-w-[15ch] overflow-hidden overflow-ellipsis whitespace-nowrap md:max-w-none'>
+        <span className='block max-w-[15ch] overflow-hidden text-ellipsis whitespace-nowrap md:max-w-none'>
           {data.item.name}
         </span>
       </div>

@@ -34,7 +34,7 @@ export default function Index() {
                 key={work.label}
                 href={work.url || ''}
                 target={isExternal ? '_blank' : '_self'}
-                className='pointer-events-auto relative min-h-[90px] font-light transition-all hover:md:!opacity-100 hover:md:!blur-none group-hover:md:opacity-40 group-hover:md:blur-xs'
+                className='pointer-events-auto relative min-h-[90px] font-light transition-all md:hover:opacity-100! md:hover:blur-none! md:group-hover:opacity-40 md:group-hover:blur-xs'
               >
                 <h2 className='mb-4 text-sm text-neutral-900 dark:text-neutral-400'>{work.label}</h2>
                 <div className='gap-6'>

@@ -134,7 +134,7 @@ export const Snowfall = () => {
 
 	return (
 		<canvas
-			className="pointer-events-none absolute inset-0 top-0 left-0 z-[9999] w-screen"
+			className="pointer-events-none absolute inset-0 top-0 left-0 z-9999 w-screen"
 			height={dimensions.height}
 			ref={canvasRef}
 		/>

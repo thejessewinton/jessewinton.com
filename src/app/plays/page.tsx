@@ -32,7 +32,7 @@ export default function Plays() {
                   <Link
                     href={play.url ?? ''}
                     key={play.title}
-                    className='flex-1 items-center justify-between py-2 transition-all before:absolute before:-left-1/2 before:h-full before:w-full before:content-[""] md:flex hover:md:!opacity-100 hover:md:!blur-none group-hover:md:opacity-40 group-hover:md:blur-xs'
+                    className='flex-1 items-center justify-between py-2 transition-all before:absolute before:-left-1/2 before:h-full before:w-full before:content-[""] md:flex md:hover:opacity-100! md:hover:blur-none! md:group-hover:opacity-40 md:group-hover:blur-xs'
                   >
                     {play.title}
                     <div className='text-sm text-neutral-500'>{play.synopsis}</div>

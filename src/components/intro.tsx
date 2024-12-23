@@ -16,7 +16,7 @@ export const Intro = () => {
         style={{
           transform: position.x && position.y ? `translate(${position.x / 3}px, ${position.y / 8}px)` : undefined
         }}
-        placeholder='blur'
+        placeholder='blur-sm'
       />
     </div>
   )
