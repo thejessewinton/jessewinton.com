@@ -6,8 +6,8 @@ const socials = [
     href: 'https://instagram.com/thejessewinton',
   },
   {
-    label: 'Email',
-    href: 'mailto:hi@jessewinton.com',
+    label: 'Letterboxd',
+    href: 'https://letterboxd.com/thejessewinton',
   },
 ]
 
