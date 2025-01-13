@@ -3,4 +3,4 @@ title: 'AI Statement'
 description: 'My thoughts on AI in creative work.'
 ---
 
-My thoughts on AI are simple. I don't use it, and neither should you. 
+I don't use AI in my writing or creative work, and neither should you. 
