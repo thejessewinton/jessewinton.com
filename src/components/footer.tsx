@@ -9,6 +9,10 @@ const socials = [
     label: 'Letterboxd',
     href: 'https://letterboxd.com/thejessewinton',
   },
+  {
+    label: 'AI Statement',
+    href: '/ai',
+  },
 ]
 
 export const Footer = () => {
@@ -17,7 +21,11 @@ export const Footer = () => {
       <div className="mx-auto flex w-full max-w-4xl flex-row items-center justify-between gap-4 px-8 text-neutral-900 dark:text-neutral-400">
         <nav className="flex items-center justify-between gap-6 text-sm">
           {socials.map((social) => (
-            <Link href={social.href} key={social.label} target="_blank">
+            <Link
+              href={social.href}
+              key={social.label}
+              target={social.href.includes('https') ? '_blank' : '_self'}
+            >
               {social.label}
             </Link>
           ))}

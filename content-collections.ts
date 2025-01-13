@@ -63,6 +63,23 @@ const plays = defineCollection({
   },
 })
 
+const ai = defineCollection({
+  name: 'aiIndex',
+  directory: 'src/content',
+  include: 'ai.md',
+  schema: (z) => ({
+    title: z.string(),
+    description: z.string(),
+  }),
+  transform: async (document, context) => {
+    const html = await compileMarkdown(context, document)
+    return {
+      ...document,
+      html,
+    }
+  },
+})
+
 export default defineConfig({
-  collections: [index, playsIndex, plays],
+  collections: [index, playsIndex, plays, ai],
 })
