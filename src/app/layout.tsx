@@ -5,7 +5,6 @@ import { Footer } from '~/components/footer'
 
 import '~/styles/globals.css'
 import { Analytics } from '@vercel/analytics/next'
-import { Snowfall } from '~/components/snowfall'
 
 const sans = Inter({
   variable: '--font-sans',
@@ -62,7 +61,6 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
         <main className="mx-auto mt-32 flex w-full max-w-4xl grow flex-col items-center justify-center px-8">
           {children}
         </main>
-        <Snowfall />
         <Footer />
         <Analytics />
       </body>

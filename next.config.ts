@@ -5,6 +5,11 @@ const config = {
   redirects: async () => {
     return [
       {
+        source: '/',
+        destination: 'https://jessewinton.works',
+        permanent: false,
+      },
+      {
         source: '/figuring-it-out-as-we-go',
         destination: 'https://thetanknyc.org/calendar-1/figuringitoutaswego',
         permanent: false,
